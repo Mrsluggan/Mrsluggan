@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @Mrsluggan
 - 👀 I’m interested in tax fruad
-- 🌱 I’m currently learning Java, js and React
+- 🌱 I’m currently learning Java, Python and React
 - 💞️ I’m looking to collaborate on everything!
 - 📫 How to reach me - ericflyger@gmail.com
 - 😄 Pronouns: He/him
