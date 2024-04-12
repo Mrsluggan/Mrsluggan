@@ -3,6 +3,11 @@ import HomeAnimation from '../components/HomeAnimation'
 
 
 export default function Home() {
+
+    let audio = new Audio("/SecretMusic.mp3")
+    const start = () => {
+        audio.play()
+      }
     return (
         <>
             <HomeAnimation
@@ -13,10 +18,8 @@ export default function Home() {
             />
             <div class="h-screen flex items-center justify-center">
 
-                <video width="320" height="240" controls>
-                    <source src="glock.mov" type="video/mp4"></source>
+            <button onClick={start}>Danger, dont press</button>
 
-                </video>
 
             </div>
 
