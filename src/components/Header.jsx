@@ -3,10 +3,11 @@ import Navbar from './Navbar'
 
 export default function Header() {
   return (
-    <div className="mb-2 mt-0 text-4xl font-medium leading-tight text-primary ">
-
+    <>
+      <header className="flex justify-center p-5">
+        <img src='https://media.tenor.com/A-xepNszV9YAAAAj/ai-bot.gif' className='w-1/10 hidden md:block'></img>
+      </header>
       <Navbar />
-
-
-    </div>)
+    </>
+  )
 }
