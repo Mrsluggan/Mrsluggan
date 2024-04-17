@@ -1,7 +1,6 @@
 import React from 'react'
-import HomeAnimation from '../components/HomeAnimation'
 import PortfolioRepos from '../components/PortfolioRepos'
-
+import Secret from '../components/Secret'
 
 export default function Home() {
     const textBoxStyle = "bg-gray-300 h-56"
@@ -14,6 +13,7 @@ export default function Home() {
                         <div className='2xl:w-1/2 xl:w-full'>
                             <h1 className='text-4xl'> Hello there, I'm <span className='text-red-500 text-5xl'>Sluggan</span></h1>
                             <p className='mt-5'>Also know as Eric, and a little about me, and im currently studing computer science. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, tenetur incidunt ea nam, cumque fuga, quis consequuntur magni odio recusandae est repellendus officia? Voluptas illo ea dicta unde aspernatur deserunt?</p>
+
                         </div>
                     </section>
 
