@@ -9,7 +9,7 @@ export default function Main() {
     return (
         <>
             <div class=" flex items-center justify-center">
-                Don't Press me <Secret />
+                <Secret />
             </div>
 
             <HomeAnimation
