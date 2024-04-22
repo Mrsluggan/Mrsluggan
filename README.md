@@ -3,4 +3,5 @@
 - 🌱 I’m currently learning Java, Python and React
 - 💞️ I’m looking to collaborate on everything!
 - 📫 How to reach me - ericflyger@gmail.com
+- - ⚡ Fun fact: My car has a blown gasket
 - 😄 Pronouns: He/him
