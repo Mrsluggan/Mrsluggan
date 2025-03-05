@@ -1,28 +1,23 @@
+import React from 'react';
+import {HashRouter, Route, Routes, NavLink} from 'react-router-dom';
 
-import './assets/App.css'
-import { HashRouter, Route, Routes, Link } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
+
+import './assets/App.css';
+import About from "./pages/About.tsx";
+import Home from "./pages/Home.tsx";
+import Navbar from "./components/Navbar.tsx";
+
 function App() {
-
-  return (
-      <HashRouter>
-        <nav >
-          <ul style={{display:"flex",width:"100%", justifyContent:"space-evenly"}}>
-            <li>
-              <Link to="/home">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-          </ul>
-        </nav>
-        <Routes>
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </HashRouter>
-  )
+    return (
+        <HashRouter>
+            <Navbar/>
+            <Routes>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/about" element={<About/>}/>
+                <Route path="*" element={<> <h1> hello!</h1> </>}/>
+            </Routes>
+        </HashRouter>
+    );
 }
 
-export default App
+export default App;
