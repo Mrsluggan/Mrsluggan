@@ -1,7 +1,4 @@
-import React from 'react';
-import {HashRouter, Route, Routes, NavLink} from 'react-router-dom';
-
-
+import {HashRouter, Route, Routes} from 'react-router-dom';
 import './assets/App.css';
 import About from "./pages/About.tsx";
 import Home from "./pages/Home.tsx";
