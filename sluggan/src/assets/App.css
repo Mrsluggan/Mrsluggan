@@ -21,42 +21,45 @@ body {
     background-color: #fef7e5;
     position: relative;
     padding: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.logo {
-}
-
-.menu-icon {
-    display: none;
+.logo-container .logo {
+    display: inline-block;
 }
 
 .nav-elements {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-.nav-elements ul {
+.nav-links ul {
     display: flex;
     justify-content: space-between;
     list-style-type: none;
 }
 
-.nav-elements ul li:not(:last-child) {
+.nav-links ul li:not(:last-child) {
     margin-right: 60px;
 }
 
-.nav-elements ul a {
+.nav-links ul li a {
     font-size: 16px;
     font-weight: 400;
     color: #2f234f;
     text-decoration: none;
 }
 
-.nav-elements ul a.active {
+.nav-links ul li a.active {
     color: #574c4c;
     font-weight: 500;
     position: relative;
 }
 
-.nav-elements ul a.active::after {
+.nav-links ul li a.active::after {
     content: '';
     position: absolute;
     bottom: -4px;
@@ -66,40 +69,82 @@ body {
     background-color: #574c4c;
 }
 
+.social-links ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+.social-links ul li {
+    margin-left: 20px;
+}
+
+.social-links ul li a {
+    display: inline-block;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
 @media (max-width: 768px) {
-    .nav-elements ul li:not(:last-child) {
+    .nav-links ul li:not(:last-child) {
         margin-right: 30px;
+    }
+    .container{
+        width: 100%;
+        justify-content: space-between;
+        margin: auto;
+    }
+    .navbar{
+    justify-content: space-evenly;
     }
 }
 
 @media (max-width: 600px) {
+
     .menu-icon {
         display: block;
-        cursor: pointer;
     }
-
     .nav-elements {
+        display: flex;
+        flex-direction: column;
         position: absolute;
         right: 0;
         top: 60px;
         background-color: #fef7e5;
-        width: 0px;
+        width: 0;
         height: calc(100vh - 60px);
         transition: all 0.3s ease-in;
         overflow: hidden;
     }
 
+
     .nav-elements.active {
-        width: 270px;
+        width: 200px;
     }
 
-    .nav-elements ul {
+    .nav-links ul {
         display: flex;
         flex-direction: column;
+        margin: auto;
+
+        justify-items: center;
+
     }
 
-    .nav-elements ul li {
-        margin-right: unset;
+    .nav-links ul li {
         margin-top: 22px;
+    }
+
+    .social-links ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .social-links ul li {
+        margin-left: 0;
     }
 }
