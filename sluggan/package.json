@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://mrsluggan.github.io",
+  "homepage": "https://sluggan.com",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
