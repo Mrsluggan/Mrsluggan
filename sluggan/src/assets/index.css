@@ -15,10 +15,23 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background: rgb(63,143,6);
-  background: linear-gradient(90deg, #000000 0%, #0f9b0f);
+  background: linear-gradient(90deg, #000000, #0f9b0f);
+  background-size: 200% 200%;
+  animation: breathing-gradient 10s infinite ease-in-out;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+@keyframes breathing-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 20% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
