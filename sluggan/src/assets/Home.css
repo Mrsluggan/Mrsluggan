@@ -18,20 +18,20 @@
 }
 
 .left-column {
-
     position: absolute;
     bottom: 0;
-    width: 70%; /* Du kan justera bredden här */
+    width: 70%;
     margin-bottom: 5%;
     margin-left: 5%;
 }
 
 .sluggan-header {
-    display: inline-block;
+    align-items: center; /* Centrerar vertikalt */
     background: rgba(0, 255, 0, 0.35);
     border-radius: 10px;
     padding: 1%;
 }
+
 
 .sluggan-icon {
     font-size: 30px;
@@ -50,9 +50,6 @@
     line-height: 1.5;
 }
 
-.right-column {
-    text-align: right;
-}
 
 h2 {
     font-size: 24px;
@@ -65,27 +62,40 @@ p {
 }
 
 @media (max-width: 768px) {
+
+
     .left-column,
     .right-column {
-        width: 100%; /* Full bredd på små skärmar */
-        padding: 5px; /* Lite mindre padding */
-        bottom: auto;
         text-align: center; /* Centrera texten */
-        position: relative; /* Ta bort absolut positionering på mobil */
+        bottom: auto;
+        position: relative;
+
+
     }
 
     .sluggan-text {
-        font-size: 14px;
+        font-size: 10px;
+    }
+    .sluggan-icon {
+        font-size: 15px;
+    }
+    .sluggan-header{
+        display: flex;
+        justify-content: space-evenly;
+
     }
 
+
     .description {
-        font-size: 18px;
+        font-size: 15px;
     }
 
     .home-container {
+        overflow: hidden;
         flex-direction: column; /* Kolumner staplas vertikalt på mobilen */
         justify-content: center;
         align-items: center; /* Centrerar innehållet */
+        height: 100vh;
     }
 
     h2 {
