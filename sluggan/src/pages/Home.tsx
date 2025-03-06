@@ -1,4 +1,5 @@
-import '../assets/Home.css';  // Ladda in en extern CSS-fil
+import '../assets/Home.css';
+import {NavLink} from "react-router-dom";  // Ladda in en extern CSS-fil
 
 export default function Home() {
     return (
@@ -13,6 +14,9 @@ export default function Home() {
                 <p className="description">
                     I am an experienced software developer with expertise in both frontend and backend technologies.
                     My focus is on creating scalable, efficient, and robust web applications.
+                </p>
+                <p className="description" >
+                    You're welcome to browse my latest <NavLink className={"project-nav-button"}  to="/projects" >Projects</NavLink> and see what I've been working on.
                 </p>
             </div>
 

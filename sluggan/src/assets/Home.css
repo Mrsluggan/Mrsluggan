@@ -9,8 +9,19 @@
 
 }
 
-.left-column,
-.right-column {
+.project-nav-button {
+    font-size: 40px;
+    font-weight: 400;
+    color: greenyellow;
+    transition: transform 0.2s ease-in-out;
+}
+.project-nav-button:hover {
+    transform: scale(1.3);
+}
+
+
+
+.left-column {
     width: 100%;
     padding: 10px;
     padding-bottom: 20px;
@@ -23,6 +34,8 @@
     width: 70%;
     margin-bottom: 5%;
     margin-left: 5%;
+
+
 }
 
 .sluggan-header {
@@ -64,22 +77,28 @@ p {
 @media (max-width: 768px) {
 
 
-    .left-column,
-    .right-column {
+    .left-column {
         text-align: center; /* Centrera texten */
         bottom: auto;
         position: relative;
-
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
 
     }
 
     .sluggan-text {
         font-size: 10px;
     }
+
     .sluggan-icon {
         font-size: 15px;
     }
-    .sluggan-header{
+
+    .sluggan-header {
+        margin-top: 5vh;
+
         display: flex;
         justify-content: space-evenly;
 
@@ -87,16 +106,19 @@ p {
 
 
     .description {
+        margin-top: 5vh;
         font-size: 15px;
     }
 
     .home-container {
         overflow: hidden;
         flex-direction: column; /* Kolumner staplas vertikalt på mobilen */
-        justify-content: center;
         align-items: center; /* Centrerar innehållet */
+        justify-content: space-between;
         height: 100vh;
+
     }
+
 
     h2 {
         font-size: 20px;
