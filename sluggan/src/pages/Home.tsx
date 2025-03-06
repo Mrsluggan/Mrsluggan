@@ -6,7 +6,7 @@ export default function Home() {
             <div className="left-column">
                 <span className="sluggan-header">
                     <span className="sluggan-icon">👋</span>
-                    <span className="sluggan-text">Hello, I'm Sluggan </span>
+                    <span className="sluggan-text"> Hello, I'm Sluggan </span>
                     <span className="sluggan-icon">🐌</span>
 
                 </span>

@@ -29,6 +29,9 @@ const Navbar = () => {
                                 <NavLink to="/"  onClick={handleShowNavbar}>Home</NavLink>
                             </li>
                             <li>
+                                <NavLink to="/projects"  onClick={handleShowNavbar}>Projects</NavLink>
+                            </li>
+                            <li>
                                 <NavLink to="/about"  onClick={handleShowNavbar}>About</NavLink>
                             </li>
                         </ul>
