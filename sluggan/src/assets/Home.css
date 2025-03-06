@@ -2,33 +2,35 @@
     font-family: 'Press Start 2P', monospace;
     text-shadow: 2px 2px 4px rgba(0, 255, 0, 0.6);
     display: flex;
-    flex-direction: column; /* Stacka kolumnerna vertikalt för mindre skärmar */
+    flex-direction: column;
     width: 100%;
     padding-bottom: 2vh;
     flex-wrap: wrap;
-    min-height: 100vh; /* Gör så att containern täcker hela höjden */
+
 }
 
 .left-column,
 .right-column {
-    width: 100%; /* Full bredd på små skärmar */
+    width: 100%;
     padding: 10px;
     padding-bottom: 20px;
-    position: relative; /* Sätter tillbaka positionen för mobiler */
+    position: relative;
 }
 
 .left-column {
-    /* För större skärmar vill vi ha left-column längst ner */
+
     position: absolute;
     bottom: 0;
     width: 70%; /* Du kan justera bredden här */
+    margin-bottom: 5%;
+    margin-left: 5%;
 }
 
 .sluggan-header {
     display: inline-block;
-    background: rgba(0, 255, 0, 0.35); /* Grön bakgrund med transparens */
+    background: rgba(0, 255, 0, 0.35);
     border-radius: 10px;
-    padding: 5px;
+    padding: 1%;
 }
 
 .sluggan-icon {
