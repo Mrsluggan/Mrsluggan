@@ -2,39 +2,6 @@
 
 📚 Current Learning: Currently expanding my expertise in Java, Python, React, and Spring Boot to enhance my full-stack development skills.
 
-💼 Employment History:
-
-    Omda (Software Developer Intern) | Feb 2025 - Jun 2025 | Solna, Stockholm County, Sweden
-
-        Developed an API using Spring Boot to manage and process big data, integrated with a PostgreSQL database for storage and retrieval.
-
-    IDATA AB (Software Developer Intern) | Nov 2024 - Dec 2024 | Värnamo, Jönköping County, Sweden
-
-        Developed APIs with Spring Boot to integrate with multiple Nordic digital postal services.
-
-    noQ (Software Developer Intern) | Feb 2024 - Aug 2024 | Stockholm, Sweden
-
-        Developed a content management system (CMS) in React for a non-profit organization to manage blog posts efficiently.
-
-    Uppsala Kommun (IT Technician) | Nov 2021 - Dec 2023 | Uppsala, Uppsala County, Sweden
-
-        Maintained IT systems, resolved technical issues, and ensured optimal network performance, enhancing efficiency and user satisfaction across municipal departments.
-
-
-🎓 Education:
-
-    Jönköping University (Java Developer Program) | Aug 2023 - Sep 2025
-
-        Studied Java development, object-oriented programming, system development, and software design.
-
-🔧 Skills:
-
-    Languages: Java, Python, JavaScript (React)
-
-    Frameworks: Spring Boot, React
-
-    Databases: PostgreSQL
-
 
 🌱 What I'm Currently Working On:
 
