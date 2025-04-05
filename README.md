@@ -20,13 +20,10 @@
 
         Maintained IT systems, resolved technical issues, and ensured optimal network performance, enhancing efficiency and user satisfaction across municipal departments.
 
-    Nobina Sverige AB (Vehicle Caretaker) | May 2021 - Nov 2021 | Uppsala, Sweden
-
-        Maintained and serviced buses, ensuring safety, cleanliness, and smooth operations, contributing to passenger satisfaction.
 
 🎓 Education:
 
-    Jönköping University (Java Developer Program) | Aug 2023 - Sep 2024
+    Jönköping University (Java Developer Program) | Aug 2023 - Sep 2025
 
         Studied Java development, object-oriented programming, system development, and software design.
 
@@ -38,7 +35,6 @@
 
     Databases: PostgreSQL
 
-    Tools: Git, Docker, Agile/Scrum
 
 🌱 What I'm Currently Working On:
 
@@ -54,6 +50,6 @@
 
     LinkedIn: eric-osterberg
 
-⚡ Fun Fact: My car has a blown gasket, but I’m always fixing things — whether it's software or a car!
+⚡ Fun Fact: My car has a blown gasket,
 
 😄 Pronouns: He/Him
