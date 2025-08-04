@@ -1,21 +1,26 @@
-import {HashRouter, Route, Routes} from 'react-router-dom';
 import './assets/App.css';
-import About from "./pages/About.tsx";
-import Home from "./pages/Home.tsx";
+import AboutMe from "./components/AboutMe.tsx";
+import Projects from "./components/Projects.tsx";
+import ContactForm from "./components/ContactForm.tsx";
 import Navbar from "./components/Navbar.tsx";
-import Projects from "./pages/Projects.tsx";
+import Employment from "./components/Employment.tsx";
 
 function App() {
+
+
     return (
-        <HashRouter>
+        <>
             <Navbar/>
-            <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/projects" element={<Projects/>}/>
-                <Route path="/about" element={<About/>}/>
-                <Route path="*" element={<> <h1> hello!</h1> </>}/>
-            </Routes>
-        </HashRouter>
+            <div className="blur-overlay"></div>
+
+            <div >
+                <AboutMe />
+                <Projects />
+                <Employment/>
+                <ContactForm />
+            </div>
+
+        </>
     );
 }
 
