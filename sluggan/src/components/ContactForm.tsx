@@ -24,50 +24,17 @@ function ContactForm() {
     };
 
     return (
-        <section id="contact" className="component contact-bg">
-            <div className="section-content" style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
+        <section id="contact" className="component">
+            <form className="contact-form" >
                 <h2 className="section-title">Kontakta mig</h2>
-                {!submitted ? (
-                    <form className="contact-form" onSubmit={handleSubmit} style={{ width: '100%', maxWidth: '600px' }}>
-                        <div>
-                            <label htmlFor="name">Namn</label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                value={formData.name}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="email">E-post</label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                value={formData.email}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor="message">Meddelande</label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                value={formData.message}
-                                onChange={handleChange}
-                                rows={5}
-                                required
-                            ></textarea>
-                        </div>
-                        <button type="submit">Skicka</button>
-                    </form>
-                ) : (
-                    <p>Tack för ditt meddelande! Jag återkommer så snart jag kan.</p>
-                )}
-            </div>
+                <label htmlFor="name">Ditt namn</label>
+                <input/>
+                <label htmlFor="name">Email</label>
+                <input/>
+                <label htmlFor="name">Meddelande</label>
+                <textarea/>
+                <button onClick={handleSubmit} className="submit-button">Skicka</button>
+            </form>
         </section>
 
 
