@@ -53,6 +53,7 @@ const Navbar = () => {
             role="navigation"
             className="navbar"
             style={{
+                zIndex: 9999,
                 backdropFilter: 'blur(8px)',
                 WebkitBackdropFilter: 'blur(8px)',
                 position: 'fixed',

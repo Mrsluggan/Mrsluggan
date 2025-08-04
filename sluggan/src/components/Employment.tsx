@@ -39,45 +39,23 @@ const Employment = () => {
 
     return (
         <div id="employment" className="component">
-            <div
-                id="employment"
-                style={{
-                    paddingTop: "50%",
-
-                }}
-            >
-                <section className="section-content" style={{textAlign: "left"}}>
+            <div>
+                <section className="section-content">
                     <h2>
                         Erfarenheter
                     </h2>
 
-                    <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                    <ul>
                         {experiences.map((exp, index) => (
                             <li
                                 key={index}
-                                style={{
-                                    display: "flex",
-                                    flexDirection: "row",
-                                    marginBottom: "2rem"
-                                }}
                             >
-                                <div
-                                    style={{
-                                        width: "120px",
-                                        fontWeight: "bold",
-                                        color: "#555",
-                                        paddingRight: "1rem",
-                                        flexShrink: 0
-                                    }}
-                                >
+                                <div>
                                     {exp.date}
                                 </div>
 
                                 <div style={{ flexGrow: 1 }}>
                                     <div
-                                        style={{
-                                            marginBottom: "0.5rem"
-                                        }}
                                     >
                                         <strong style={{ fontSize: "1.1rem" }}>{exp.title}</strong>{" "}
                                         <em style={{ color: "#777" }}>– {exp.location}</em>
