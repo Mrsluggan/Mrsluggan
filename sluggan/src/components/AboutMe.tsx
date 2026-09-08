@@ -8,12 +8,19 @@ const ROLES = [
     "slow but steady",
 ];
 
+function prefersReducedMotion() {
+    return typeof window !== "undefined" &&
+        window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+}
+
 function useTypewriter(words: string[]) {
-    const [text, setText] = useState("");
+    const reduced = prefersReducedMotion();
+    const [text, setText] = useState(reduced ? words[0] : "");
     const [wordIdx, setWordIdx] = useState(0);
     const [deleting, setDeleting] = useState(false);
 
     useEffect(() => {
+        if (reduced) return;
         const word = words[wordIdx];
         const done = !deleting && text === word;
         const empty = deleting && text === "";
@@ -29,7 +36,7 @@ function useTypewriter(words: string[]) {
         }, delay);
 
         return () => clearTimeout(t);
-    }, [text, deleting, wordIdx, words]);
+    }, [text, deleting, wordIdx, words, reduced]);
 
     return text;
 }
@@ -43,7 +50,7 @@ function AboutMe() {
                 <div className="hero-text reveal">
                     <span className="hero-status">
                         <span className="status-dot" />
-                        Uppsala, SE · building at Crystal Alarm
+                        Software Engineer at Crystal Alarm · Uppsala
                     </span>
 
                     <h1>
@@ -55,11 +62,12 @@ function AboutMe() {
                     </p>
 
                     <p className="hero-intro">
-                        Currently building the positioning engines for Crystal alarm &amp; security products —
-                        indoor BLE/WiFi positioning with fallback logic, API integrations,
-                        and mobile for iOS &amp; Android. C#/.NET by day, Java at heart.{" "}
-                        <em>The simplest things are often the truest.</em>
+                        I work on the positioning engines behind Crystal Alarm's alarm and
+                        security products: indoor BLE and WiFi positioning, the fallback
+                        logic between them, API integrations, and some iOS and Android.
+                        Mostly C#/.NET these days, Java before that.
                     </p>
+                    <p className="hero-motto"><em>The simplest things are often the truest.</em></p>
 
                     <div className="hero-actions">
                         <a className="btn btn-primary" href="#playground"

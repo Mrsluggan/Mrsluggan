@@ -14,8 +14,8 @@
 
     /* text */
     --text:        #ece9e2;
-    --text-muted:  #9aa0aa;
-    --text-faint:  #5c626c;
+    --text-muted:  #a2a8b2;
+    --text-faint:  #7b818b;
 
     /* accent — snail slime */
     --slime:       #b6f04a;
@@ -66,6 +66,36 @@ h1, h2, h3, h4 {
 a { color: inherit; }
 
 ::selection { background: var(--slime); color: #0a0b0d; }
+
+/* ---------- keyboard focus (a11y) ---------- */
+:focus-visible {
+    outline: 2px solid var(--slime);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+/* don't show the ring for mouse users who don't need it */
+:focus:not(:focus-visible) { outline: none; }
+
+/* ---------- skip link (a11y) ---------- */
+.skip-link {
+    position: fixed;
+    top: 0.6rem;
+    left: 0.6rem;
+    z-index: 10000;
+    transform: translateY(-160%);
+    background: var(--slime);
+    color: #0a0b0d;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: transform 0.2s var(--ease);
+}
+.skip-link:focus { transform: none; }
+
+main:focus { outline: none; }
 
 /* thin slime scrollbar */
 ::-webkit-scrollbar { width: 10px; }

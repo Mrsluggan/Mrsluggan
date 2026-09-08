@@ -52,7 +52,7 @@ const Employment = () => {
     return (
         <section id="employment" className="section">
             <div className="reveal">
-                <p className="eyebrow">03 — the track record</p>
+                <p className="eyebrow">02 · experience</p>
                 <h2 className="section-title">Experience</h2>
                 <p className="section-lead">
                     A tiny look into the past

@@ -11,9 +11,9 @@ function ContactForm() {
     // Static site, no backend: hand off to the visitor's mail client.
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const subject = encodeURIComponent(`Hey Eric — from ${form.name || "your site"}`);
+        const subject = encodeURIComponent(`Hello from ${form.name || "your site"}`);
         const body = encodeURIComponent(
-            `${form.message}\n\n— ${form.name}${form.email ? ` (${form.email})` : ""}`
+            `${form.message}\n\n${form.name}${form.email ? ` (${form.email})` : ""}`
         );
         window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
     };
@@ -21,11 +21,11 @@ function ContactForm() {
     return (
         <section id="contact" className="section">
             <div className="reveal">
-                <p className="eyebrow">04 — say hi</p>
-                <h2 className="section-title">Let's build something</h2>
+                <p className="eyebrow">03 · contact</p>
+                <h2 className="section-title">Get in touch</h2>
                 <p className="section-lead">
-                    Open to backend roles, systems work and open-source. Drop a line — I
-                    answer faster than a snail moves.
+                    Open to backend roles, interesting systems work, and the odd
+                    open-source project. Email is the easiest way to reach me.
                 </p>
             </div>
 
@@ -74,7 +74,7 @@ function ContactForm() {
                     </div>
                     <button type="submit" className="btn btn-primary">Send message ▸</button>
                     <p className="contact-note">
-                        Opens your mail app — no data touches a server. Static and honest.
+                        This opens your own mail app. Nothing is sent anywhere else.
                     </p>
                 </form>
             </div>

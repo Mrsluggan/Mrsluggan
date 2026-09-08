@@ -151,6 +151,14 @@
 }
 .hero-intro em { color: var(--text); font-style: italic; }
 
+.hero-motto {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--text-faint);
+    margin: 0 0 1.8rem;
+}
+.hero-motto em { font-style: italic; }
+
 .hero-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-bottom: 2rem; }
 
 .hero-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
