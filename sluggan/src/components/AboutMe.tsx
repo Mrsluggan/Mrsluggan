@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import profileImg from "../assets/profile.jpg";
 
 const ROLES = [
-    "backend developer",
-    "Java & Spring Boot",
-    "API architect",
+    "software engineer",
+    "C#/.NET & Java",
+    "BLE/WiFi positioning",
     "slow but steady",
 ];
 
@@ -43,7 +43,7 @@ function AboutMe() {
                 <div className="hero-text reveal">
                     <span className="hero-status">
                         <span className="status-dot" />
-                        Open to new opportunities
+                        Uppsala, SE · building at Crystal Alarm
                     </span>
 
                     <h1>
@@ -55,15 +55,16 @@ function AboutMe() {
                     </p>
 
                     <p className="hero-intro">
-                        I build backend systems that are boring in the best way — the kind
-                        that just keep running. Java, Spring Boot, and databases that don't
-                        fall over under load. <em>The simplest things are often the truest.</em>
+                        I build positioning engines for alarm &amp; security products —
+                        indoor BLE/WiFi positioning with fallback logic, API integrations,
+                        and mobile for iOS &amp; Android. C#/.NET by day, Java at heart.{" "}
+                        <em>The simplest things are often the truest.</em>
                     </p>
 
                     <div className="hero-actions">
-                        <a className="btn btn-primary" href="#projects"
-                           onClick={(e) => { e.preventDefault(); document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" }); }}>
-                            ▸ See my work
+                        <a className="btn btn-primary" href="#playground"
+                           onClick={(e) => { e.preventDefault(); document.getElementById("playground")?.scrollIntoView({ behavior: "smooth" }); }}>
+                            ▸ Poke around
                         </a>
                         <a className="btn" href="https://github.com/Mrsluggan" target="_blank" rel="noopener noreferrer">
                             GitHub ↗
@@ -74,11 +75,11 @@ function AboutMe() {
                     </div>
 
                     <div className="hero-chips">
-                        <span className="chip"><span>›</span> Java</span>
+                        <span className="chip"><span>›</span> C# / .NET</span>
                         <span className="chip"><span>›</span> Spring Boot</span>
-                        <span className="chip"><span>›</span> PostgreSQL</span>
+                        <span className="chip"><span>›</span> BLE + WiFi positioning</span>
+                        <span className="chip"><span>›</span> Cisco Spaces API</span>
                         <span className="chip"><span>›</span> React + TS</span>
-                        <span className="chip"><span>›</span> REST APIs</span>
                     </div>
                 </div>
 
@@ -90,8 +91,8 @@ function AboutMe() {
                 </div>
             </div>
 
-            <a href="#projects" className="scroll-hint"
-               onClick={(e) => { e.preventDefault(); document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" }); }}>
+            <a href="#playground" className="scroll-hint"
+               onClick={(e) => { e.preventDefault(); document.getElementById("playground")?.scrollIntoView({ behavior: "smooth" }); }}>
                 <span>scroll</span>
                 <span className="arrow">↓</span>
             </a>

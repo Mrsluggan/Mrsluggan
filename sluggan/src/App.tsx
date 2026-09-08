@@ -1,7 +1,7 @@
 import './assets/App.css';
 import Navbar from "./components/Navbar.tsx";
 import AboutMe from "./components/AboutMe.tsx";
-import Projects from "./components/Projects.tsx";
+import Terminal from "./components/Terminal.tsx";
 import Employment from "./components/Employment.tsx";
 import ContactForm from "./components/ContactForm.tsx";
 import Footer from "./components/Footer.tsx";
@@ -16,7 +16,7 @@ function App() {
             <Navbar />
             <main>
                 <AboutMe />
-                <Projects />
+                <Terminal />
                 <Employment />
                 <ContactForm />
             </main>

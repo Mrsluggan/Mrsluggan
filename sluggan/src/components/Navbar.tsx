@@ -3,7 +3,7 @@ import snail from "../assets/snail.svg";
 
 const links = [
     { label: "about", href: "#about" },
-    { label: "projects", href: "#projects" },
+    { label: "playground", href: "#playground" },
     { label: "experience", href: "#employment" },
     { label: "contact", href: "#contact" },
 ];
