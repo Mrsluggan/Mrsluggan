@@ -1,25 +1,31 @@
 import './assets/App.css';
+import Navbar from "./components/Navbar.tsx";
 import AboutMe from "./components/AboutMe.tsx";
 import Projects from "./components/Projects.tsx";
-import ContactForm from "./components/ContactForm.tsx";
-import Navbar from "./components/Navbar.tsx";
 import Employment from "./components/Employment.tsx";
+import ContactForm from "./components/ContactForm.tsx";
+import Footer from "./components/Footer.tsx";
+import snail from "./assets/snail.svg";
+import { useReveal } from "./hooks/useReveal.ts";
 
 function App() {
-
+    useReveal();
 
     return (
         <>
-            <Navbar/>
-            <div className="blur-overlay"></div>
-
-            <div >
+            <Navbar />
+            <main>
                 <AboutMe />
                 <Projects />
-                <Employment/>
+                <Employment />
                 <ContactForm />
-            </div>
+            </main>
+            <Footer />
 
+            {/* a very patient snail crossing the page */}
+            <div className="crawler" aria-hidden="true">
+                <img src={snail} alt="" />
+            </div>
         </>
     );
 }
