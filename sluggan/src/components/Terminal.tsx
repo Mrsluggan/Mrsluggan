@@ -78,7 +78,7 @@ function runCommand(raw: string): { lines: Line[]; clear?: boolean } {
                 out("    /     \\      slow is smooth,"),
                 out("   | () () |     smooth is fast."),
                 out("    \\  ^  /__/"),
-                out("  🐌‾‾‾‾‾‾‾‾"),
+                out("     ‾‾‾‾‾‾"),
             ]};
         case "sudo make coffee":
         case "sudo":
@@ -136,7 +136,7 @@ function Terminal() {
                 <p className="eyebrow">02 — the fun part</p>
                 <h2 className="section-title">Have a poke around</h2>
                 <p className="section-lead">
-                    No dumped repo list here — just a tiny shell. Type{" "}
+                    No snails, just a tiny shell. Type{" "}
                     <code className="inline-code">help</code> and see where it goes. The
                     stack's right below if you're in a hurry.
                 </p>
