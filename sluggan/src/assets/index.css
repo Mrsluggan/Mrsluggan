@@ -1,5 +1,150 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Merriweather&display=swap');
-html {
-    scroll-behavior: smooth;
+/* ============================================================
+   Sluggan — design system
+   Backend dev / snail motif: slow, steady, hard to knock over.
+   ============================================================ */
+
+:root {
+    /* surfaces */
+    --bg:          #0a0b0d;
+    --bg-soft:     #101216;
+    --panel:       #14171c;
+    --panel-2:     #191d24;
+    --border:      #262b33;
+    --border-soft: #1d222a;
+
+    /* text */
+    --text:        #ece9e2;
+    --text-muted:  #9aa0aa;
+    --text-faint:  #5c626c;
+
+    /* accent — snail slime */
+    --slime:       #b6f04a;
+    --slime-dim:   #8fc22e;
+    --slime-glow:  rgba(182, 240, 74, 0.16);
+    --amber:       #f0a94a;
+
+    /* type */
+    --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --font-body:    'Inter', system-ui, sans-serif;
+    --font-mono:    'JetBrains Mono', ui-monospace, monospace;
+    --font-pixel:   'Press Start 2P', monospace;
+
+    /* misc */
+    --radius:   14px;
+    --radius-sm: 9px;
+    --maxw:     1080px;
+    --ease:     cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(1100px 620px at 78% -8%, rgba(182,240,74,0.07), transparent 60%),
+        radial-gradient(900px 700px at 8% 12%, rgba(240,169,74,0.045), transparent 55%),
+        var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.1;
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+a { color: inherit; }
+
+::selection { background: var(--slime); color: #0a0b0d; }
+
+/* thin slime scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: #22272f; border-radius: 20px; border: 2px solid var(--bg); }
+::-webkit-scrollbar-thumb:hover { background: var(--slime-dim); }
+
+/* ---------- layout helpers ---------- */
+.section {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: clamp(4.5rem, 10vw, 8rem) clamp(1.2rem, 4vw, 2.5rem);
+    scroll-margin-top: 80px;
+}
+
+.eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--slime);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin: 0 0 1rem;
+}
+.eyebrow::before {
+    content: "";
+    width: 22px; height: 1px;
+    background: var(--slime);
+    opacity: 0.6;
+}
+
+.section-title {
+    font-size: clamp(1.9rem, 4.5vw, 2.9rem);
+    margin-bottom: 0.6rem;
+}
+.section-lead {
+    color: var(--text-muted);
+    max-width: 46ch;
+    margin: 0 0 2.6rem;
+}
+
+/* ---------- reveal on scroll ---------- */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+    will-change: opacity, transform;
+}
+.reveal.in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+}
+
+/* ---------- buttons ---------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.72rem 1.15rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--panel);
+    color: var(--text);
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s var(--ease), border-color 0.2s, background 0.2s, color 0.2s;
+}
+.btn:hover { transform: translateY(-2px); border-color: var(--slime-dim); }
+.btn-primary {
+    background: var(--slime);
+    color: #0a0b0d;
+    border-color: var(--slime);
+    font-weight: 700;
+}
+.btn-primary:hover { background: #c6ff5c; box-shadow: 0 8px 30px var(--slime-glow); }

@@ -1,87 +1,66 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import snail from "../assets/snail.svg";
+
+const links = [
+    { label: "about", href: "#about" },
+    { label: "projects", href: "#projects" },
+    { label: "experience", href: "#employment" },
+    { label: "contact", href: "#contact" },
+];
 
 const Navbar = () => {
-    const [, setActiveIndex] = useState(0);
+    const [active, setActive] = useState("about");
+    const [scrolled, setScrolled] = useState(false);
+    const [progress, setProgress] = useState(0);
 
-    const links = [
-        { label: "About", href: "#about" },
-        { label: "Projects", href: "#projects" },
-        { label: "Employment", href: "#employment" },
-        { label: "Contact", href: "#contact" },
-    ];
-
-    const handleClick = (
-        e: React.MouseEvent<HTMLAnchorElement>,
-        href: string,
-        index: number) => {
-
+    const scrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
         e.preventDefault();
-        const id = href.replace("#", "");
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
-            setActiveIndex(index);
-        }
+        document.getElementById(href.slice(1))?.scrollIntoView({ behavior: "smooth" });
     };
 
     useEffect(() => {
         const onScroll = () => {
-            const scrollPosition = window.scrollY + window.innerHeight / 3;
+            const y = window.scrollY;
+            setScrolled(y > 20);
 
-            let currentIndex = 0;
-            for (let i = 0; i < links.length; i++) {
-                const section = document.getElementById(links[i].href.replace("#", ""));
-                if (section) {
-                    if (section.offsetTop <= scrollPosition) {
-                        currentIndex = i;
-                    }
-                }
+            const docH = document.documentElement.scrollHeight - window.innerHeight;
+            setProgress(docH > 0 ? (y / docH) * 100 : 0);
+
+            const mark = y + window.innerHeight / 3;
+            let current = links[0].href.slice(1);
+            for (const { href } of links) {
+                const el = document.getElementById(href.slice(1));
+                if (el && el.offsetTop <= mark) current = href.slice(1);
             }
-
-            setActiveIndex(currentIndex);
+            setActive(current);
         };
-
-        window.addEventListener("scroll", onScroll);
-
+        window.addEventListener("scroll", onScroll, { passive: true });
         onScroll();
-
         return () => window.removeEventListener("scroll", onScroll);
-    }, [links]);
+    }, []);
 
     return (
         <nav
+            className={`navbar${scrolled ? " scrolled" : ""}`}
+            style={{ ["--scroll" as string]: `${progress}%` }}
             role="navigation"
-            className="navbar"
-            style={{
-                zIndex: 9999,
-                backdropFilter: 'blur(8px)',
-                WebkitBackdropFilter: 'blur(8px)',
-                position: 'fixed',
-                top: 0,
-                width: '100%',
-                height: '10%',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-            }}
         >
-            <ul
-                style={{
-                    display: 'flex',
-                    justifyContent: 'space-evenly',
-                    alignItems: 'center',
-                    listStyle: 'none',
-                    width: '100%',
-                    padding: 0,
-                    margin: 0,
-                }}
-            >
-                {links.map(({ label, href }, i) => (
-                    <li key={i} style={{ flex: 1, textAlign: 'center' }}>
+            <a href="#about" className="brand" onClick={(e) => scrollTo(e, "#about")}>
+                <img src={snail} alt="" />
+                <span>
+                    sluggan
+                    <br />
+                    <span className="brand-sub">// slow but steady</span>
+                </span>
+            </a>
+
+            <ul className="nav-links">
+                {links.map(({ label, href }) => (
+                    <li key={href}>
                         <a
                             href={href}
-                            onClick={(e) => handleClick(e, href, i)}
-                            style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '10px 0' }}
+                            onClick={(e) => scrollTo(e, href)}
+                            className={active === href.slice(1) ? "active" : ""}
                         >
                             {label}
                         </a>
@@ -89,7 +68,6 @@ const Navbar = () => {
                 ))}
             </ul>
         </nav>
-
     );
 };
 
