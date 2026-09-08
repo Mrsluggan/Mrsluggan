@@ -37,9 +37,9 @@ function runCommand(raw: string): { lines: Line[]; clear?: boolean } {
             ]};
         case "whoami":
             return { lines: [
-                out("Eric Österberg — Software Engineer, Uppsala SE."),
-                out("4+ yrs in software & IT. C#/.NET and Java."),
-                out("Builds systems that are boring in the best way."),
+                out("Eric Österberg, software engineer in Uppsala."),
+                out("4+ years in software and IT. C#/.NET and Java."),
+                out("Prefers small, reliable systems over clever ones."),
             ]};
         case "skills":
         case "stack":
@@ -133,12 +133,12 @@ function Terminal() {
     return (
         <section id="playground" className="section">
             <div className="reveal">
-                <p className="eyebrow">02 — the fun part</p>
+                <p className="eyebrow">01 · playground</p>
                 <h2 className="section-title">Have a poke around</h2>
                 <p className="section-lead">
                     No snails, just a tiny shell. Type{" "}
-                    <code className="inline-code">help</code> and see where it goes. The
-                    stack's right below if you're in a hurry.
+                    <code className="inline-code">help</code> and go from there. If you're
+                    in a hurry, the stack is right below.
                 </p>
             </div>
 

@@ -2,7 +2,7 @@ const Footer = () => {
     const year = new Date().getFullYear();
     return (
         <footer className="footer">
-            <span>© {year} Eric Österberg · built slow, built to last 🐌</span>
+            <span>© {year} Eric Österberg · Uppsala, Sweden 🐌</span>
             <span>
                 <a href="https://github.com/Mrsluggan">github</a>
                 {"  ·  "}

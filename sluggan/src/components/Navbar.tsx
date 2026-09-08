@@ -61,6 +61,7 @@ const Navbar = () => {
                             href={href}
                             onClick={(e) => scrollTo(e, href)}
                             className={active === href.slice(1) ? "active" : ""}
+                            aria-current={active === href.slice(1) ? "true" : undefined}
                         >
                             {label}
                         </a>
