@@ -55,8 +55,7 @@ const Employment = () => {
                 <p className="eyebrow">03 — the track record</p>
                 <h2 className="section-title">Experience</h2>
                 <p className="section-lead">
-                    From municipal IT support to positioning engines — always building,
-                    always shipping.
+                    A tiny look into the past
                 </p>
             </div>
 

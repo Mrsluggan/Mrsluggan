@@ -55,7 +55,7 @@ function AboutMe() {
                     </p>
 
                     <p className="hero-intro">
-                        I build positioning engines for alarm &amp; security products —
+                        Currently building the positioning engines for Crystal alarm &amp; security products —
                         indoor BLE/WiFi positioning with fallback logic, API integrations,
                         and mobile for iOS &amp; Android. C#/.NET by day, Java at heart.{" "}
                         <em>The simplest things are often the truest.</em>
