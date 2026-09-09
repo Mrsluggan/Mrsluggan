@@ -67,10 +67,10 @@ function runCommand(raw: string): { lines: Line[]; clear?: boolean } {
                 out("→ or use the form at the bottom of the page."),
             ]};
         case "github":
-            window.open("https://github.com/Mrsluggan", "_blank");
+            window.open("https://github.com/Mrsluggan", "_blank", "noopener");
             return { lines: [out("opening github.com/Mrsluggan …")] };
         case "linkedin":
-            window.open("https://www.linkedin.com/in/eric-osterberg", "_blank");
+            window.open("https://www.linkedin.com/in/eric-osterberg", "_blank", "noopener");
             return { lines: [out("opening linkedin.com/in/eric-osterberg …")] };
         case "snail":
             return { lines: [
@@ -164,6 +164,9 @@ function Terminal() {
                             onKeyDown={onKeyDown}
                             spellCheck={false}
                             autoComplete="off"
+                            autoCapitalize="none"
+                            autoCorrect="off"
+                            enterKeyHint="go"
                             aria-label="terminal input"
                             placeholder="help"
                         />

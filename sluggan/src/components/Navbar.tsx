@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import snail from "../assets/snail.svg";
 
 const links = [
@@ -12,9 +12,13 @@ const Navbar = () => {
     const [active, setActive] = useState("about");
     const [scrolled, setScrolled] = useState(false);
     const [progress, setProgress] = useState(0);
+    const [open, setOpen] = useState(false);
+    const navRef = useRef<HTMLElement>(null);
+    const toggleRef = useRef<HTMLButtonElement>(null);
 
     const scrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
         e.preventDefault();
+        setOpen(false);
         document.getElementById(href.slice(1))?.scrollIntoView({ behavior: "smooth" });
     };
 
@@ -39,11 +43,34 @@ const Navbar = () => {
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
+    // Escape or a click outside closes the mobile menu.
+    useEffect(() => {
+        if (!open) return;
+
+        const onKeyDown = (e: KeyboardEvent) => {
+            if (e.key === "Escape") {
+                setOpen(false);
+                toggleRef.current?.focus();
+            }
+        };
+        const onPointerDown = (e: PointerEvent) => {
+            if (!navRef.current?.contains(e.target as Node)) setOpen(false);
+        };
+
+        document.addEventListener("keydown", onKeyDown);
+        document.addEventListener("pointerdown", onPointerDown);
+        return () => {
+            document.removeEventListener("keydown", onKeyDown);
+            document.removeEventListener("pointerdown", onPointerDown);
+        };
+    }, [open]);
+
     return (
         <nav
-            className={`navbar${scrolled ? " scrolled" : ""}`}
+            ref={navRef}
+            className={`navbar${scrolled ? " scrolled" : ""}${open ? " menu-open" : ""}`}
             style={{ ["--scroll" as string]: `${progress}%` }}
-            role="navigation"
+            aria-label="Main"
         >
             <a href="#about" className="brand" onClick={(e) => scrollTo(e, "#about")}>
                 <img src={snail} alt="" />
@@ -54,7 +81,19 @@ const Navbar = () => {
                 </span>
             </a>
 
-            <ul className="nav-links">
+            <button
+                ref={toggleRef}
+                type="button"
+                className="nav-toggle"
+                aria-label={open ? "Close menu" : "Open menu"}
+                aria-expanded={open}
+                aria-controls="nav-menu"
+                onClick={() => setOpen((o) => !o)}
+            >
+                <span className="bars" aria-hidden="true" />
+            </button>
+
+            <ul id="nav-menu" className={`nav-links${open ? " open" : ""}`}>
                 {links.map(({ label, href }) => (
                     <li key={href}>
                         <a

@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import profileImg from "../assets/profile.jpg";
+import profileImg from "../assets/profile.webp";
+import Typewriter from "./Typewriter.tsx";
 
 const ROLES = [
     "software engineer",
@@ -8,42 +8,7 @@ const ROLES = [
     "slow but steady",
 ];
 
-function prefersReducedMotion() {
-    return typeof window !== "undefined" &&
-        window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
-}
-
-function useTypewriter(words: string[]) {
-    const reduced = prefersReducedMotion();
-    const [text, setText] = useState(reduced ? words[0] : "");
-    const [wordIdx, setWordIdx] = useState(0);
-    const [deleting, setDeleting] = useState(false);
-
-    useEffect(() => {
-        if (reduced) return;
-        const word = words[wordIdx];
-        const done = !deleting && text === word;
-        const empty = deleting && text === "";
-
-        const delay = done ? 1600 : empty ? 300 : deleting ? 45 : 85;
-
-        const t = setTimeout(() => {
-            if (done) { setDeleting(true); return; }
-            if (empty) { setDeleting(false); setWordIdx((i) => (i + 1) % words.length); return; }
-            setText((cur) =>
-                deleting ? cur.slice(0, -1) : word.slice(0, cur.length + 1)
-            );
-        }, delay);
-
-        return () => clearTimeout(t);
-    }, [text, deleting, wordIdx, words, reduced]);
-
-    return text;
-}
-
 function AboutMe() {
-    const typed = useTypewriter(ROLES);
-
     return (
         <section id="about" className="hero">
             <div className="hero-grid">
@@ -58,7 +23,7 @@ function AboutMe() {
                     </h1>
 
                     <p className="hero-tagline">
-                        <span className="hero-typed">{typed}</span>
+                        <Typewriter words={ROLES} className="hero-typed" />
                     </p>
 
                     <p className="hero-intro">
@@ -93,7 +58,14 @@ function AboutMe() {
 
                 <div className="hero-portrait reveal">
                     <div className="frame">
-                        <img src={profileImg} alt="Eric Österberg" />
+                        <img
+                            src={profileImg}
+                            alt="Eric Österberg"
+                            width={800}
+                            height={1166}
+                            fetchPriority="high"
+                            decoding="async"
+                        />
                     </div>
                     <span className="portrait-badge">HELLO, I'M SLUGGAN</span>
                 </div>

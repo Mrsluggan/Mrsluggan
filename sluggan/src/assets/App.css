@@ -72,9 +72,71 @@
 .nav-links a.active { color: var(--slime); background: rgba(182,240,74,0.08); }
 .nav-cta { display: none; }
 
+/* hamburger — only ever visible on narrow screens */
+.nav-toggle {
+    display: none;
+    width: 42px; height: 42px;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text);
+    cursor: pointer;
+}
+.nav-toggle .bars,
+.nav-toggle .bars::before,
+.nav-toggle .bars::after {
+    content: "";
+    display: block;
+    width: 18px; height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    transition: transform 0.25s var(--ease), opacity 0.2s;
+}
+.nav-toggle .bars { position: relative; }
+.nav-toggle .bars::before { position: absolute; top: -6px; }
+.nav-toggle .bars::after  { position: absolute; top: 6px; }
+.navbar.menu-open .nav-toggle { border-color: var(--slime-dim); color: var(--slime); }
+.navbar.menu-open .bars { background: transparent; }
+.navbar.menu-open .bars::before { transform: translateY(6px) rotate(45deg); }
+.navbar.menu-open .bars::after  { transform: translateY(-6px) rotate(-45deg); }
+
 @media (max-width: 620px) {
-    .nav-links a { padding: 0.4rem 0.55rem; font-size: 0.78rem; }
     .brand .brand-sub { display: none; }
+    .nav-toggle { display: inline-flex; }
+
+    /* the link list becomes a dropdown panel under the bar */
+    .nav-links {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: clamp(1.2rem, 4vw, 2.5rem);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.15rem;
+        min-width: 168px;
+        padding: 0.5rem;
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+        /* visibility (not just opacity) keeps it out of the tab order */
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-8px);
+        transition: opacity 0.2s var(--ease), transform 0.2s var(--ease), visibility 0.2s;
+    }
+    .nav-links.open {
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+    }
+    .nav-links a { padding: 0.6rem 0.75rem; font-size: 0.9rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .nav-links, .nav-toggle .bars,
+    .nav-toggle .bars::before, .nav-toggle .bars::after { transition: none; }
 }
 
 /* ---------------- Hero ---------------- */
@@ -284,9 +346,10 @@
     height: 340px;
     max-height: 52vh;
     overflow-y: auto;
+    overflow-x: auto;
     text-align: left;
 }
-.term-line { white-space: pre-wrap; word-break: break-word; }
+.term-line { white-space: pre; }
 .term-line.in { color: var(--text); }
 .term-line.out { color: var(--text-muted); }
 .term-line.sys { color: var(--slime-dim); }
