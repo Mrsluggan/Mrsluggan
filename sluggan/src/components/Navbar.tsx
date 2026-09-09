@@ -15,9 +15,12 @@ const pages = [{ label: "photos", href: "/photos/" }];
 type Props = {
     /** "home" scrolls between sections; "sub" links back to them. */
     variant?: "home" | "sub";
+    /** href of the current page. a prop, not window.location, because this
+     *  renders at build time where there is no window */
+    current?: string;
 };
 
-const Navbar = ({ variant = "home" }: Props) => {
+const Navbar = ({ variant = "home", current }: Props) => {
     const onHome = variant === "home";
     const [active, setActive] = useState(onHome ? "about" : "");
     const [scrolled, setScrolled] = useState(false);
@@ -40,7 +43,7 @@ const Navbar = ({ variant = "home" }: Props) => {
             const docH = document.documentElement.scrollHeight - window.innerHeight;
             setProgress(docH > 0 ? (y / docH) * 100 : 0);
 
-            // Only the front page has sections to spy on.
+            // only the front page has sections to spy on
             if (!onHome) return;
             const mark = y + window.innerHeight / 3;
             let current = sections[0].href.slice(1);
@@ -55,7 +58,7 @@ const Navbar = ({ variant = "home" }: Props) => {
         return () => window.removeEventListener("scroll", onScroll);
     }, [onHome]);
 
-    // Escape or a click outside closes the mobile menu.
+    // escape or a click outside closes the mobile menu
     useEffect(() => {
         if (!open) return;
 
@@ -123,7 +126,7 @@ const Navbar = ({ variant = "home" }: Props) => {
                     </li>
                 ))}
                 {pages.map(({ label, href }) => {
-                    const here = !onHome && window.location.pathname.startsWith(href);
+                    const here = current === href;
                     return (
                         <li key={href}>
                             <a

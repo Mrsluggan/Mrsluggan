@@ -10,7 +10,7 @@ function PhotosPage() {
     return (
         <>
             <a href="#main" className="skip-link">Skip to content</a>
-            <Navbar variant="sub" />
+            <Navbar variant="sub" current="/photos/" />
             <main id="main" tabIndex={-1} className="section photos-page">
                 <div className="reveal">
                     <p className="eyebrow">photos</p>

@@ -1,24 +1,16 @@
-/**
- * The gallery, in the order it should appear. This file is yours to edit —
- * nothing generates or rewrites it.
+/*
+ * The gallery, in the order it shows up. Nothing generates this file.
  *
- * To add a picture:
- *   1. drop the original into photos-src/  (any size, straight off the camera)
- *   2. run `npm run photos:build`          (converts, resizes, strips EXIF)
- *   3. add a row here                      (the script prints one for you)
- *
- * `file` is the name inside src/assets/photos/. Width and height are not
- * listed here on purpose — the build script keeps those in photo-sizes.json
- * so you never have to measure anything by hand.
+ * To add a picture: drop the original in photos-src/, run
+ * `npm run photos:build`, then add a row here (the script prints one).
+ * Sizes live in photo-sizes.json and are filled in by the script.
  */
 
 export type Photo = {
     /** filename inside src/assets/photos/ */
     file: string;
-    /** what the picture shows, for screen readers and when it fails to load */
     alt: string;
-    /** shown under the picture; both optional — a few of these have no EXIF
-     *  left to go on, and a made-up caption is worse than none */
+    /** caption. optional: some of these have no EXIF left to go on */
     place?: string;
     year?: number;
 };
