@@ -1,0 +1,60 @@
+/* ============================================================
+   Photos page
+   ============================================================ */
+
+.photos-page {
+    /* clears the fixed navbar */
+    padding-top: clamp(6.5rem, 12vw, 9rem);
+}
+
+/* Masonry without JavaScript: the browser balances the columns, and mixed
+   portrait/landscape shots slot in wherever they fit. */
+.gallery {
+    columns: 3 260px;
+    column-gap: 1rem;
+    margin-top: 2.4rem;
+}
+
+.shot {
+    /* keeps a picture and its caption from being split across columns */
+    break-inside: avoid;
+    margin: 0 0 1rem;
+}
+
+.shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-soft);
+    background: var(--panel);
+    transition: border-color 0.3s var(--ease), transform 0.4s var(--ease);
+}
+.shot:hover img {
+    border-color: var(--slime-dim);
+    transform: translateY(-3px);
+}
+
+.shot figcaption {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    color: var(--text-muted);
+    padding: 0.55rem 0.15rem 0;
+}
+.shot-year { color: var(--text-faint); }
+
+.gallery-empty {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-faint);
+    margin-top: 2.4rem;
+}
+
+@media (max-width: 620px) {
+    .gallery { columns: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .shot img { transition: none; }
+    .shot:hover img { transform: none; }
+}

@@ -1,15 +1,25 @@
 import { useState, useEffect, useRef } from "react";
 import snail from "../assets/snail.svg";
 
-const links = [
+/** Sections of the front page. */
+const sections = [
     { label: "about", href: "#about" },
     { label: "playground", href: "#playground" },
     { label: "experience", href: "#employment" },
     { label: "contact", href: "#contact" },
 ];
 
-const Navbar = () => {
-    const [active, setActive] = useState("about");
+/** Pages of their own, always plain links. */
+const pages = [{ label: "photos", href: "/photos/" }];
+
+type Props = {
+    /** "home" scrolls between sections; "sub" links back to them. */
+    variant?: "home" | "sub";
+};
+
+const Navbar = ({ variant = "home" }: Props) => {
+    const onHome = variant === "home";
+    const [active, setActive] = useState(onHome ? "about" : "");
     const [scrolled, setScrolled] = useState(false);
     const [progress, setProgress] = useState(0);
     const [open, setOpen] = useState(false);
@@ -30,9 +40,11 @@ const Navbar = () => {
             const docH = document.documentElement.scrollHeight - window.innerHeight;
             setProgress(docH > 0 ? (y / docH) * 100 : 0);
 
+            // Only the front page has sections to spy on.
+            if (!onHome) return;
             const mark = y + window.innerHeight / 3;
-            let current = links[0].href.slice(1);
-            for (const { href } of links) {
+            let current = sections[0].href.slice(1);
+            for (const { href } of sections) {
                 const el = document.getElementById(href.slice(1));
                 if (el && el.offsetTop <= mark) current = href.slice(1);
             }
@@ -41,7 +53,7 @@ const Navbar = () => {
         window.addEventListener("scroll", onScroll, { passive: true });
         onScroll();
         return () => window.removeEventListener("scroll", onScroll);
-    }, []);
+    }, [onHome]);
 
     // Escape or a click outside closes the mobile menu.
     useEffect(() => {
@@ -72,7 +84,11 @@ const Navbar = () => {
             style={{ ["--scroll" as string]: `${progress}%` }}
             aria-label="Main"
         >
-            <a href="#about" className="brand" onClick={(e) => scrollTo(e, "#about")}>
+            <a
+                href={onHome ? "#about" : "/"}
+                className="brand"
+                onClick={onHome ? (e) => scrollTo(e, "#about") : undefined}
+            >
                 <img src={snail} alt="" />
                 <span>
                     sluggan
@@ -94,11 +110,11 @@ const Navbar = () => {
             </button>
 
             <ul id="nav-menu" className={`nav-links${open ? " open" : ""}`}>
-                {links.map(({ label, href }) => (
+                {sections.map(({ label, href }) => (
                     <li key={href}>
                         <a
-                            href={href}
-                            onClick={(e) => scrollTo(e, href)}
+                            href={onHome ? href : `/${href}`}
+                            onClick={onHome ? (e) => scrollTo(e, href) : undefined}
                             className={active === href.slice(1) ? "active" : ""}
                             aria-current={active === href.slice(1) ? "true" : undefined}
                         >
@@ -106,6 +122,20 @@ const Navbar = () => {
                         </a>
                     </li>
                 ))}
+                {pages.map(({ label, href }) => {
+                    const here = !onHome && window.location.pathname.startsWith(href);
+                    return (
+                        <li key={href}>
+                            <a
+                                href={href}
+                                className={here ? "active" : ""}
+                                aria-current={here ? "page" : undefined}
+                            >
+                                {label}
+                            </a>
+                        </li>
+                    );
+                })}
             </ul>
         </nav>
     );

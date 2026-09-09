@@ -30,6 +30,7 @@ function runCommand(raw: string): { lines: Line[]; clear?: boolean } {
                 out("  experience   where I've worked"),
                 out("  now          what I'm doing today"),
                 out("  contact      how to reach me"),
+                out("  photos       pictures I actually like"),
                 out("  github       open my github"),
                 out("  linkedin     open my linkedin"),
                 out("  snail        🐌"),
@@ -66,6 +67,9 @@ function runCommand(raw: string): { lines: Line[]; clear?: boolean } {
                 out("github    @Mrsluggan"),
                 out("→ or use the form at the bottom of the page."),
             ]};
+        case "photos":
+            window.location.href = "/photos/";
+            return { lines: [out("opening the gallery …")] };
         case "github":
             window.open("https://github.com/Mrsluggan", "_blank", "noopener");
             return { lines: [out("opening github.com/Mrsluggan …")] };
@@ -84,7 +88,7 @@ function runCommand(raw: string): { lines: Line[]; clear?: boolean } {
         case "sudo":
             return { lines: [out("nice try. snails don't do root — we do patience.")] };
         case "ls":
-            return { lines: [out("about  skills  experience  contact  secrets/")] };
+            return { lines: [out("about  skills  experience  photos  contact  secrets/")] };
         case "cat secrets/":
         case "cat secrets":
             return { lines: [out("permission denied — my car already has a blown gasket, that's enough chaos.")] };
