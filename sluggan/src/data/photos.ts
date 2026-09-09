@@ -187,12 +187,6 @@ export const photos: Photo[] = [
         year: 2024,
     },
     {
-        file: "img-0170.webp",
-        alt: "Two of us at a packed gig, throwing horns at the camera",
-        place: "Stockholm",
-        year: 2025,
-    },
-    {
         file: "735290ea-ea9d-4b08-98e5-5718b84f2ffb.webp",
         alt: "Standing under exposed steel beams in a building stripped back to the frame",
         place: "Uppsala",
