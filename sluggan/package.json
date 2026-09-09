@@ -11,7 +11,8 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "fonts:sync": "cp node_modules/@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2 public/fonts/space-grotesk-latin.woff2 && cp node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2 public/fonts/inter-latin.woff2 && cp node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2 public/fonts/jetbrains-mono-latin.woff2 && cp node_modules/@fontsource/press-start-2p/files/press-start-2p-latin-400-normal.woff2 public/fonts/press-start-2p-latin.woff2"
+    "fonts:sync": "cp node_modules/@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2 public/fonts/space-grotesk-latin.woff2 && cp node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2 public/fonts/inter-latin.woff2 && cp node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2 public/fonts/jetbrains-mono-latin.woff2 && cp node_modules/@fontsource/press-start-2p/files/press-start-2p-latin-400-normal.woff2 public/fonts/press-start-2p-latin.woff2",
+    "photos:build": "node scripts/photos-build.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",
@@ -31,6 +32,7 @@
     "eslint-plugin-react-refresh": "^0.4.19",
     "gh-pages": "^6.3.0",
     "globals": "^15.15.0",
+    "sharp": "0.35.4",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.24.1",
     "vite": "^6.2.0"

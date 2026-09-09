@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# camera originals — only the converted webp are committed
+photos-src
