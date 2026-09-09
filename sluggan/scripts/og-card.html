@@ -1,0 +1,185 @@
+<!doctype html>
+<!-- Source for public/og.png. Rendered by `npm run og:build`. -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <style>
+        @font-face {
+            font-family: 'Space Grotesk';
+            font-weight: 300 700;
+            src: url(../public/fonts/space-grotesk-latin.woff2) format('woff2');
+        }
+        @font-face {
+            font-family: 'JetBrains Mono';
+            font-weight: 100 800;
+            src: url(../public/fonts/jetbrains-mono-latin.woff2) format('woff2');
+        }
+
+        :root {
+            --bg: #0a0b0d;
+            --panel: #14171c;
+            --border: #262b33;
+            --text: #ece9e2;
+            --muted: #a2a8b2;
+            --faint: #7b818b;
+            --slime: #b6f04a;
+            --slime-dim: #8fc22e;
+            --amber: #f0a94a;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            width: 1200px;
+            height: 630px;
+            overflow: hidden;
+            background:
+                radial-gradient(760px 520px at 88% 6%, rgba(182, 240, 74, 0.10), transparent 62%),
+                radial-gradient(620px 520px at 4% 96%, rgba(240, 169, 74, 0.06), transparent 58%),
+                var(--bg);
+            color: var(--text);
+            font-family: 'Space Grotesk', system-ui, sans-serif;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* generous; Slack and LinkedIn crop the edges a little */
+            padding: 62px 72px 58px;
+        }
+
+        /* the snail, sitting on its trail */
+        .mark {
+            position: absolute;
+            right: 66px;
+            bottom: 128px;
+            width: 340px;
+            opacity: 0.13;
+            transform: scaleX(-1);
+        }
+        .mark path { fill: var(--slime); }
+
+        /* the trail */
+        .trail {
+            position: absolute;
+            left: 0;
+            bottom: 126px;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg,
+                transparent 2%,
+                rgba(182, 240, 74, 0.10) 18%,
+                rgba(182, 240, 74, 0.45) 74%,
+                rgba(182, 240, 74, 0.55) 86%,
+                transparent 96%);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            position: relative;
+        }
+        .brand svg { width: 38px; height: 38px; }
+        .brand svg path { fill: var(--text); }
+        .brand-name {
+            font-size: 27px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+        .brand-sub {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: var(--faint);
+            letter-spacing: 0.05em;
+        }
+
+        .middle { position: relative; }
+
+        h1 {
+            font-size: 104px;
+            font-weight: 700;
+            letter-spacing: -0.035em;
+            line-height: 1;
+        }
+        h1 .accent { color: var(--slime); }
+
+        .role {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 23px;
+            color: var(--muted);
+            margin-top: 22px;
+            letter-spacing: 0.01em;
+        }
+        .role .dot {
+            display: inline-block;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--slime);
+            margin-right: 13px;
+            vertical-align: 2px;
+            box-shadow: 0 0 14px rgba(182, 240, 74, 0.6);
+        }
+
+        .chips {
+            display: flex;
+            gap: 11px;
+            margin-top: 34px;
+        }
+        .chip {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 15px;
+            color: var(--muted);
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            padding: 9px 15px;
+        }
+        .chip span { color: var(--slime-dim); margin-right: 8px; }
+
+        .foot {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 19px;
+            position: relative;
+        }
+        .url { color: var(--slime); font-weight: 700; letter-spacing: 0.01em; }
+        .motto { color: var(--faint); font-size: 15px; font-style: italic; }
+    </style>
+</head>
+<body>
+    <svg class="mark" viewBox="0 0 512.002 512.002" xmlns="http://www.w3.org/2000/svg">
+        <path d="M458.009,0c-23.554,0-42.718,19.163-42.718,42.718c0,5.505,1.057,10.762,2.962,15.598c-16.547,19.084-27.307,44.813-32.257,64.584c-6.299-1.452-12.847-2.245-19.58-2.245s-13.281,0.793-19.579,2.245c-4.95-19.771-15.71-45.499-32.257-64.584c1.905-4.836,2.962-10.094,2.962-15.598C317.541,19.163,298.378,0,274.824,0s-42.718,19.163-42.718,42.718s19.163,42.718,42.718,42.718c6.501,0,12.665-1.466,18.188-4.075c13.436,16.781,21.835,40.309,24.617,54.272c-17.841,12.103-30.953,30.65-36.02,52.263c-22.048-9.199-45.925-13.995-70.186-13.995c-84.859,0-157.485,57.899-173.969,138.14c-6.58,10.373-11.673,22.026-15.086,34.624c-6.916,9.555-11.093,21.862-11.093,35.284c0,12.749,3.773,24.488,10.078,33.822c11.966,50.148,50.244,84.904,94.042,84.904c5.287,0,10.502-0.5,15.613-1.47c11.385,5.862,27.531,12.799,50.912,12.799h142.928c48.443,0,82.308-10.371,103.53-31.704c25.509-25.643,25.327-60.399,25.207-83.397c-0.008-1.563-0.017-3.091-0.017-4.577l-0.027-184.545c0-29.976-15.22-56.463-38.335-72.145c2.781-13.963,11.18-37.491,24.617-54.272c5.521,2.609,11.685,4.075,18.188,4.075c23.554,0,42.718-19.163,42.718-42.718S481.563,0,458.009,0z M274.824,54.088c-6.269,0-11.371-5.101-11.371-11.371s5.101-11.371,11.371-11.371s11.371,5.101,11.371,11.371S281.094,54.088,274.824,54.088z M42.622,381.945c0-12.58,7.5-23.616,16.049-23.616c8.548,0,16.049,11.036,16.049,23.616c0,12.581-7.5,23.617-16.049,23.617C50.122,405.561,42.622,394.525,42.622,381.945z M115.395,469.323c-20.682,0.001-39.709-12.548-52.079-32.682c31.586-9.184,42.75-38.905,42.75-54.696c0-30.311-20.335-54.964-45.328-54.964c-1.822,0-3.611,0.142-5.368,0.4c19.618-58.816,75.183-100.335,138.053-100.335c80.278,0,145.592,65.313,145.592,145.592C338.928,441.42,271.372,469.323,115.395,469.323z M429.311,283.216c0,1.539,0.008,3.12,0.017,4.738c0.105,20.15,0.251,47.744-16.061,64.139c-9.94,9.992-25.812,16.755-47.771,20.363c2.919-11.202,4.478-22.947,4.478-35.051c0-53.802-30.598-100.585-75.293-123.83c5.573-27.842,30.29-48.475,59.734-48.475c33.588,0,60.914,27.325,60.914,60.914L429.311,283.216z M458.009,54.088c-6.269,0-11.371-5.101-11.371-11.371s5.101-11.371,11.371-11.371c6.27,0,11.371,5.101,11.371,11.371S464.279,54.088,458.009,54.088z"/>
+    </svg>
+
+    <div class="brand">
+        <svg viewBox="0 0 512.002 512.002" xmlns="http://www.w3.org/2000/svg">
+            <path d="M458.009,0c-23.554,0-42.718,19.163-42.718,42.718c0,5.505,1.057,10.762,2.962,15.598c-16.547,19.084-27.307,44.813-32.257,64.584c-6.299-1.452-12.847-2.245-19.58-2.245s-13.281,0.793-19.579,2.245c-4.95-19.771-15.71-45.499-32.257-64.584c1.905-4.836,2.962-10.094,2.962-15.598C317.541,19.163,298.378,0,274.824,0s-42.718,19.163-42.718,42.718s19.163,42.718,42.718,42.718c6.501,0,12.665-1.466,18.188-4.075c13.436,16.781,21.835,40.309,24.617,54.272c-17.841,12.103-30.953,30.65-36.02,52.263c-22.048-9.199-45.925-13.995-70.186-13.995c-84.859,0-157.485,57.899-173.969,138.14c-6.58,10.373-11.673,22.026-15.086,34.624c-6.916,9.555-11.093,21.862-11.093,35.284c0,12.749,3.773,24.488,10.078,33.822c11.966,50.148,50.244,84.904,94.042,84.904c5.287,0,10.502-0.5,15.613-1.47c11.385,5.862,27.531,12.799,50.912,12.799h142.928c48.443,0,82.308-10.371,103.53-31.704c25.509-25.643,25.327-60.399,25.207-83.397c-0.008-1.563-0.017-3.091-0.017-4.577l-0.027-184.545c0-29.976-15.22-56.463-38.335-72.145c2.781-13.963,11.18-37.491,24.617-54.272c5.521,2.609,11.685,4.075,18.188,4.075c23.554,0,42.718-19.163,42.718-42.718S481.563,0,458.009,0z M274.824,54.088c-6.269,0-11.371-5.101-11.371-11.371s5.101-11.371,11.371-11.371s11.371,5.101,11.371,11.371S281.094,54.088,274.824,54.088z M42.622,381.945c0-12.58,7.5-23.616,16.049-23.616c8.548,0,16.049,11.036,16.049,23.616c0,12.581-7.5,23.617-16.049,23.617C50.122,405.561,42.622,394.525,42.622,381.945z M115.395,469.323c-20.682,0.001-39.709-12.548-52.079-32.682c31.586-9.184,42.75-38.905,42.75-54.696c0-30.311-20.335-54.964-45.328-54.964c-1.822,0-3.611,0.142-5.368,0.4c19.618-58.816,75.183-100.335,138.053-100.335c80.278,0,145.592,65.313,145.592,145.592C338.928,441.42,271.372,469.323,115.395,469.323z M429.311,283.216c0,1.539,0.008,3.12,0.017,4.738c0.105,20.15,0.251,47.744-16.061,64.139c-9.94,9.992-25.812,16.755-47.771,20.363c2.919-11.202,4.478-22.947,4.478-35.051c0-53.802-30.598-100.585-75.293-123.83c5.573-27.842,30.29-48.475,59.734-48.475c33.588,0,60.914,27.325,60.914,60.914L429.311,283.216z M458.009,54.088c-6.269,0-11.371-5.101-11.371-11.371s5.101-11.371,11.371-11.371c6.27,0,11.371,5.101,11.371,11.371S464.279,54.088,458.009,54.088z"/>
+        </svg>
+        <div>
+            <div class="brand-name">sluggan</div>
+            <div class="brand-sub">// slow but steady</div>
+        </div>
+    </div>
+
+    <div class="middle">
+        <h1>Eric <span class="accent">Österberg</span></h1>
+        <div class="role"><span class="dot"></span>Software Engineer · Uppsala</div>
+        <div class="chips">
+            <div class="chip"><span>›</span>C# / .NET</div>
+            <div class="chip"><span>›</span>BLE + WiFi positioning</div>
+            <div class="chip"><span>›</span>React + TS</div>
+        </div>
+    </div>
+
+    <div class="trail"></div>
+
+    <div class="foot">
+        <div class="url">sluggan.com</div>
+        <div class="motto">The simplest things are often the truest.</div>
+    </div>
+</body>
+</html>

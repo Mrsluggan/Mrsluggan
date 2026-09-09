@@ -7,8 +7,7 @@
     padding-top: clamp(6.5rem, 12vw, 9rem);
 }
 
-/* Masonry without JavaScript: the browser balances the columns, and mixed
-   portrait/landscape shots slot in wherever they fit. */
+/* masonry without javascript */
 .gallery {
     columns: 3 260px;
     column-gap: 1rem;
@@ -16,7 +15,7 @@
 }
 
 .shot {
-    /* keeps a picture and its caption from being split across columns */
+    /* don't split a picture from its caption */
     break-inside: avoid;
     margin: 0 0 1rem;
 }

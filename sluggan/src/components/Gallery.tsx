@@ -1,9 +1,7 @@
 import { photos } from "../data/photos.ts";
 import sizes from "../data/photo-sizes.json";
 
-// Vite resolves every file in the folder to its hashed, cache-busted URL.
-// Dropping a picture in src/assets/photos/ is enough for it to be found here;
-// src/data/photos.ts decides which ones are shown, and in what order.
+// hashed urls for everything in the folder; photos.ts picks what's shown
 const urls = import.meta.glob<string>("../assets/photos/*.webp", {
     eager: true,
     query: "?url",
@@ -11,14 +9,12 @@ const urls = import.meta.glob<string>("../assets/photos/*.webp", {
 });
 
 const urlFor = (file: string) => urls[`../assets/photos/${file}`];
-// photo-sizes.json holds [width, height] per file; TypeScript widens the
-// JSON arrays to number[], which is all we need to index.
+// [width, height] per file
 const sizeFor = (file: string): number[] | undefined =>
     (sizes as Record<string, number[]>)[file];
 
 function Gallery() {
-    // A picture listed in photos.ts but missing from the folder would render a
-    // broken frame, so skip it rather than show a hole.
+    // skip anything listed but missing rather than render a broken frame
     const items = photos.filter((p) => urlFor(p.file));
 
     if (items.length === 0) {
@@ -36,7 +32,7 @@ function Gallery() {
                             alt={p.alt}
                             width={size?.[0]}
                             height={size?.[1]}
-                            /* the first couple are above the fold on most screens */
+                            /* first couple are above the fold */
                             loading={i < 2 ? "eager" : "lazy"}
                             fetchPriority={i === 0 ? "high" : undefined}
                             decoding="async"

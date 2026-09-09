@@ -1,21 +1,11 @@
 #!/usr/bin/env node
-/**
- * Turns whatever you dumped in photos-src/ into web-sized WebP in
- * src/assets/photos/, and records the dimensions in src/data/photo-sizes.json
- * so the gallery can reserve space and the page doesn't jump while loading.
+/*
+ * photos-src/ -> web-sized webp in src/assets/photos/ + dimensions in
+ * photo-sizes.json. Originals are gitignored; put anything you want to keep
+ * but not publish in photos-src/skipped/.
  *
- *   npm run photos:build
- *
- * Originals stay in photos-src/, which is gitignored — the repo only ever
- * carries the converted files. Anything you want to keep but not publish goes
- * in photos-src/skipped/; only the top level is read.
- *
- * Two things worth knowing about what this does to a phone photo:
- *
- *   - EXIF is dropped, so GPS coordinates and timestamps aren't published.
- *   - EXIF orientation is *applied* first. A portrait shot off an iPhone is
- *     usually stored landscape with an "rotate 90°" tag; strip the tag without
- *     baking in the rotation and every one of those ends up on its side.
+ * Drops EXIF (so no GPS), but applies the orientation tag first, otherwise
+ * every portrait shot off a phone ends up sideways.
  */
 
 import sharp from "sharp";
@@ -29,18 +19,14 @@ const OUT = join(root, "src/assets/photos");
 const SIZES = join(root, "src/data/photo-sizes.json");
 const MANIFEST = join(root, "src/data/photos.ts");
 
-/**
- * Longest edge in the output. The gallery never shows a picture wider than
- * about 340 CSS px on desktop or 340 on a phone, so 1200 still leaves room for
- * a 3x display. Going higher just costs bytes nobody sees.
- */
+// columns are ~340 CSS px, so 1200 covers a 3x display
 const MAX_EDGE = 1200;
 const QUALITY = 80;
 const INPUTS = new Set([".jpg", ".jpeg", ".png", ".heic", ".heif", ".tif", ".tiff", ".webp"]);
 
 const kb = (n) => `${Math.round(n / 1024)}KB`;
 
-/** photos-src/My Photo 01.JPG -> my-photo-01.webp */
+// My Photo 01.JPG -> my-photo-01.webp
 const webpName = (original) =>
     `${basename(original, extname(original))
         .toLowerCase()
@@ -73,9 +59,8 @@ for (const original of originals) {
     const name = webpName(original);
     const to = join(OUT, name);
 
-    // .rotate() with no angle means "apply whatever the EXIF orientation says",
-    // and it has to come before .resize() so the fit is measured on the upright
-    // image. sharp writes no metadata unless asked, so EXIF stops here.
+    // rotate() with no angle applies the EXIF orientation, and has to come
+    // before resize() so the fit is measured on the upright image
     const { width, height } = await sharp(from)
         .rotate()
         .resize({
@@ -99,8 +84,7 @@ for (const original of originals) {
     console.log(`  ${original} → ${name}  ${width}×${height}  ${kb(before)} → ${kb(after)}`);
 }
 
-// Take a picture out of photos-src/ and it should leave the site too, rather
-// than lingering in the repo as an orphan nobody links to.
+// drop converted files whose original is gone
 const expected = new Set(originals.map(webpName));
 const removed = [];
 for (const f of readdirSync(OUT).filter((f) => f.endsWith(".webp"))) {

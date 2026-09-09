@@ -1,9 +1,11 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { hydrateRoot } from 'react-dom/client'
 import './assets/index.css'
 import App from './App.tsx'
 
-createRoot(document.getElementById('root')!).render(
+// markup is already there from scripts/prerender.mjs
+hydrateRoot(
+  document.getElementById('root')!,
   <StrictMode>
     <App />
   </StrictMode>,

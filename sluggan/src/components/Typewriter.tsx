@@ -10,13 +10,10 @@ type Props = {
     className?: string;
 };
 
-/**
- * Types `words` out one at a time, then backspaces and moves on.
- *
- * Lives in its own component so the ~85ms tick only re-renders this span
- * instead of the whole hero. The animated text is hidden from assistive
- * tech — a letter-by-letter live stream is unusable — and the full list is
- * exposed once, statically, instead.
+/*
+ * Types the words out one at a time. Own component so the 85ms tick doesn't
+ * re-render the whole hero. Hidden from screen readers, which get the plain
+ * list instead of a letter-by-letter stream.
  */
 function Typewriter({ words, className }: Props) {
     const reduced = prefersReducedMotion();

@@ -14,9 +14,37 @@
     <meta name="theme-color" content="#0a0b0d" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://sluggan.com/photos/" />
+    <meta property="og:site_name" content="sluggan" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:image" content="https://sluggan.com/og-photos.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="A wall of photographs: Uppsala cathedral at dusk, a dog, a sunset over the Baltic, a ridge above the clouds" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://sluggan.com/og-photos.jpg" />
 
     <link rel="preload" href="/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+    <script type="application/ld+json">
+    {
+          "@context": "https://schema.org",
+          "@type": "ImageGallery",
+          "name": "Ones I actually like",
+          "description": "Photos I took and didn't delete.",
+          "url": "https://sluggan.com/photos/",
+          "author": {
+                "@type": "Person",
+                "name": "Eric Österberg",
+                "url": "https://sluggan.com"
+          }
+    }
+    </script>
+
+    <noscript>
+      <!-- .reveal fades in on scroll, so without JS it stays at opacity 0 -->
+      <style>.reveal { opacity: 1 !important; transform: none !important; }</style>
+    </noscript>
   </head>
   <body>
     <div id="root"></div>
