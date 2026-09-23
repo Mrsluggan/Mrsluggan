@@ -1,22 +1,24 @@
-👨‍💻 About Me: I’m a passionate Java developer with hands-on experience in software development, specializing in backend systems, APIs, and full-stack technologies. I thrive in cross-functional environments, collaborating to build scalable solutions that enhance user satisfaction and performance.
+# Sluggan AB
 
-📚 Current Learning: Currently expanding my expertise in Java, Python, React, and Spring Boot to enhance my full-stack development skills.
+Source for [sluggan.com](https://sluggan.com) — the company website for Sluggan AB,
+a one-person consultancy in Uppsala, Sweden building websites, web apps and mobile
+apps for small businesses and individuals.
 
+The site lives in [`sluggan/`](sluggan), a Vite + React + TypeScript app,
+statically prerendered and deployed to GitHub Pages on every push to `main`
+(see [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)).
 
-🌱 What I'm Currently Working On:
+## Development
 
-    I’m building APIs and content management systems, and working on data-driven applications to solve real-world problems.
+```bash
+cd sluggan
+npm install
+npm run dev
+```
 
-💞️ Looking to Collaborate:
+## Build
 
-    I'm always open to new opportunities, whether they involve software development, system design, or open-source projects. Let’s connect and build something amazing together!
-
-📫 Reach Out:
-
-    Email: ericflyger@gmail.com
-
-    LinkedIn: eric-osterberg
-
-⚡ Fun Fact: My car has a blown gasket,
-
-😄 Pronouns: He/Him
+```bash
+npm run build      # type-check, build, and prerender to dist/
+npm run preview    # serve the production build locally
+```

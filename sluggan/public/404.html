@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>404 — no snails found</title>
+    <title>404 — page not found</title>
     <meta name="robots" content="noindex" />
-    <link rel="icon" type="image/svg+xml" href="/snail.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <style>
-        /* Self-hosted, same faces the main site uses. */
+        /* Self-hosted, same face the main site uses. */
         @font-face {
             font-family: 'Space Grotesk';
             font-style: normal;
@@ -15,28 +15,19 @@
             font-weight: 300 700;
             src: url(/fonts/space-grotesk-latin.woff2) format('woff2');
         }
-        @font-face {
-            font-family: 'JetBrains Mono';
-            font-style: normal;
-            font-display: swap;
-            font-weight: 100 800;
-            src: url(/fonts/jetbrains-mono-latin.woff2) format('woff2');
-        }
         :root {
-            --bg: #0a0b0d;
-            --panel: #14171c;
-            --border: #262b33;
-            --text: #ece9e2;
-            --muted: #a2a8b2;
-            --slime: #b6f04a;
-            --slime-glow: rgba(182, 240, 74, 0.16);
+            --bg: #ffffff;
+            --panel: #f6f7f9;
+            --border: #e2e5eb;
+            --text: #14181f;
+            --muted: #565d6b;
+            --accent: #2b4fe0;
+            --accent-glow: rgba(43, 79, 224, 0.16);
         }
         * { box-sizing: border-box; }
         html, body { height: 100%; margin: 0; }
         body {
-            background:
-                radial-gradient(900px 520px at 78% -8%, rgba(182,240,74,0.08), transparent 60%),
-                var(--bg);
+            background: var(--bg);
             color: var(--text);
             font-family: 'Space Grotesk', system-ui, sans-serif;
             display: flex;
@@ -46,59 +37,47 @@
             text-align: center;
         }
         .wrap { max-width: 440px; }
-        .code {
-            font-family: 'JetBrains Mono', ui-monospace, monospace;
-            font-size: 0.8rem;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: var(--slime);
-            margin-bottom: 1.2rem;
+        .mark {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px; height: 44px;
+            border-radius: 10px;
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 1.4rem;
         }
-        .art {
-            font-family: 'JetBrains Mono', ui-monospace, monospace;
-            white-space: pre;
-            color: var(--muted);
-            font-size: 0.8rem;
-            line-height: 1.35;
-            margin: 0 0 1.6rem;
-            text-align: left;
-            display: inline-block;
-        }
-        h1 { font-size: clamp(2.4rem, 9vw, 3.6rem); margin: 0 0 0.6rem; letter-spacing: -0.02em; }
-        h1 .slime { color: var(--slime); }
-        p { color: var(--muted); line-height: 1.6; margin: 0 0 2rem; }
+        h1 { font-size: clamp(2.2rem, 8vw, 3.2rem); margin: 0 0 0.6rem; letter-spacing: -0.02em; }
+        h1 .accent { color: var(--accent); }
+        p { color: var(--muted); line-height: 1.6; margin: 0 0 2rem; font-family: system-ui, sans-serif; }
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            font-family: 'JetBrains Mono', ui-monospace, monospace;
             font-weight: 700;
             font-size: 0.9rem;
             text-decoration: none;
-            color: #0a0b0d;
-            background: var(--slime);
+            color: #ffffff;
+            background: var(--accent);
             padding: 0.75rem 1.3rem;
             border-radius: 9px;
             transition: box-shadow 0.2s, transform 0.2s;
         }
-        .btn:hover { box-shadow: 0 8px 30px var(--slime-glow); transform: translateY(-2px); }
+        .btn:hover { box-shadow: 0 8px 30px var(--accent-glow); transform: translateY(-2px); }
         .btn:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
     </style>
 </head>
 <body>
     <main class="wrap">
-        <div class="code">error 404</div>
-<pre class="art">      _____
-     /     \
-    | () () |
-     \  ^  /__/
-        ‾‾‾‾‾‾</pre>
-        <h1>No <span class="slime">snails</span> found</h1>
+        <span class="mark">S</span>
+        <h1>Page not <span class="accent">found</span></h1>
         <p>
-            This page slithered off, or never existed. Even a snail would have
-            reached the homepage by now.
+            This page doesn't exist, or has moved. Head back to the homepage to
+            find what you're looking for.
         </p>
-        <a class="btn" href="/">← back to safety</a>
+        <a class="btn" href="/">← Back to Sluggan AB</a>
     </main>
 </body>
 </html>
