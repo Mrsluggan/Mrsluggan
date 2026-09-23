@@ -291,6 +291,48 @@
     .about-grid { grid-template-columns: 1fr; }
 }
 
+/* ---------------- FAQ ---------------- */
+.faq-list { border-top: 1.5px solid var(--border-strong); max-width: 46rem; }
+.faq-item {
+    border-bottom: 1px solid var(--border);
+}
+.faq-item summary {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.4rem 0;
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::marker { content: ""; }
+.faq-item summary span:first-child { max-width: 42ch; }
+.faq-toggle {
+    position: relative;
+    flex-shrink: 0;
+    width: 1rem; height: 1rem;
+    margin-top: 0.3rem;
+}
+.faq-toggle::before, .faq-toggle::after {
+    content: "";
+    position: absolute;
+    top: 50%; left: 50%;
+    background: var(--accent);
+    transition: transform 0.2s var(--ease);
+}
+.faq-toggle::before { width: 1rem; height: 1.5px; transform: translate(-50%, -50%); }
+.faq-toggle::after  { width: 1.5px; height: 1rem; transform: translate(-50%, -50%); }
+.faq-item[open] .faq-toggle::after { transform: translate(-50%, -50%) rotate(90deg) scaleY(0); }
+.faq-item p {
+    color: var(--text-muted);
+    max-width: 56ch;
+    margin: 0 0 1.6rem;
+}
+
 /* ---------------- Contact ---------------- */
 .contact-wrap {
     display: grid;
