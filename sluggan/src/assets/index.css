@@ -41,9 +41,9 @@
     --text-faint:  #8a8065;
 
     /* the one sharp accent */
-    --accent:      #c8481a;
-    --accent-dim:  #9c380f;
-    --accent-glow: rgba(200, 72, 26, 0.18);
+    --accent:      #2f4a34;
+    --accent-dim:  #21351f;
+    --accent-glow: rgba(47, 74, 52, 0.22);
 
     /* reversed surface, used for one deliberate high-contrast band */
     --ink:         #201d16;
