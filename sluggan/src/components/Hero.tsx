@@ -5,16 +5,16 @@ function Hero() {
                 <p className="hero-kicker">Sluggan AB · Uppsala, Sverige</p>
 
                 <h1>
-                    Webb- och apputveckling
+                    Hemsidor och appar
                     <span className="accent">för småföretag.</span>
                 </h1>
 
                 <p className="hero-intro">
-                    Jag heter Eric och driver Sluggan AB. Jag bygger webbplatser och appar
-                    åt småföretag och privatpersoner som vill ha något som fungerar, utan
-                    att gå via en stor byrå eller en lång säljprocess. Berätta vad du vill
-                    göra, så funderar vi tillsammans ut vad som faktiskt är vettigt att
-                    bygga.
+                    Jag heter Eric och driver Sluggan AB i Uppsala. Jag bygger hemsidor
+                    och appar åt småföretag och privatpersoner som vill ha något som
+                    fungerar, utan att gå via en stor byrå eller en lång säljprocess.
+                    Berätta vad du vill göra, så funderar vi tillsammans ut vad som
+                    faktiskt är vettigt att bygga.
                 </p>
 
                 <div className="hero-actions">
@@ -38,7 +38,7 @@ function Hero() {
             <aside className="hero-aside reveal">
                 <p className="hero-aside-label">Det jag bygger</p>
                 <ul className="hero-aside-list">
-                    <li><span className="n">01</span> Webbplatser</li>
+                    <li><span className="n">01</span> Hemsidor</li>
                     <li><span className="n">02</span> Webbapplikationer</li>
                     <li><span className="n">03</span> Mobilappar</li>
                 </ul>

@@ -1,11 +1,11 @@
 const faqs = [
     {
         q: "Vad kostar det?",
-        a: "Beror helt på omfattningen. En enkel webbplats kostar betydligt mindre än en skräddarsydd app med inloggning och backend. Hör av dig så får du en kostnadsfri offert med ett fast pris, innan något börjar byggas.",
+        a: "Beror helt på omfattningen. En enkel hemsida kostar betydligt mindre än en skräddarsydd app med inloggning och backend. Hör av dig så får du en kostnadsfri offert med ett fast pris, innan något börjar byggas.",
     },
     {
         q: "Hur lång tid tar det?",
-        a: "En enkel webbplats tar ofta ett par veckor. Något med backend, konton eller en mobilapp tar längre tid. Du får en realistisk tidsplan som en del av planen, och du hör av mig löpande istället för att få veta allt i slutet.",
+        a: "En enkel hemsida tar ofta ett par veckor. Något med backend, konton eller en mobilapp tar längre tid. Du får en realistisk tidsplan som en del av planen, och du hör av mig löpande istället för att få veta allt i slutet.",
     },
     {
         q: "Bygger ni för både iOS och Android?",

@@ -1,7 +1,7 @@
 const tiles = [
     {
-        title: "Webbplatser",
-        desc: "Behöver du en webbplats för företaget — något som förklarar vad ni gör, ser ut som det tillhör ett riktigt företag, och som du faktiskt kan uppdatera själv efteråt — är det oftast här jag kan hjälpa som mest.",
+        title: "Hemsidor",
+        desc: "Behöver du en hemsida för företaget — en webbplats som förklarar vad ni gör, ser ut som den tillhör ett riktigt företag, och som du faktiskt kan uppdatera själv efteråt — är det oftast här jag kan hjälpa som mest.",
     },
     {
         title: "Webbapplikationer",
