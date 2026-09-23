@@ -1,9 +1,9 @@
 /* ============================================================
    Sluggan AB — design system
-   Paper, ink, and one warm accent. Quiet on purpose.
+   Paper, ink, and one hot accent. Serif throughout, on purpose.
    ============================================================ */
 
-/* Self-hosted, latin subset only. Variable file, so one download covers
+/* Self-hosted, latin subset only. Variable files, so one download covers
    every weight. `npm run fonts:sync` refreshes them. */
 @font-face {
     font-family: 'Fraunces';
@@ -13,41 +13,51 @@
     src: url(/fonts/fraunces-latin.woff2) format('woff2');
 }
 @font-face {
-    font-family: 'Inter';
+    font-family: 'Fraunces';
+    font-style: italic;
+    font-display: swap;
+    font-weight: 300 700;
+    src: url(/fonts/fraunces-latin-italic.woff2) format('woff2');
+}
+@font-face {
+    font-family: 'Newsreader';
     font-style: normal;
     font-display: swap;
-    font-weight: 100 900;
-    src: url(/fonts/inter-latin.woff2) format('woff2');
+    font-weight: 200 800;
+    src: url(/fonts/newsreader-latin.woff2) format('woff2');
 }
 
 :root {
-    /* surfaces */
-    --bg:          #faf8f3;
-    --bg-soft:     #f2ede2;
-    --panel:       #faf8f3;
-    --panel-2:     #f2ede2;
-    --border:      #ddd5c4;
-    --border-soft: #e7e1d3;
+    /* surfaces — warm paper, one temperature throughout */
+    --bg:          #f6f1e6;
+    --bg-soft:     #ece3d0;
+    --panel:       #f6f1e6;
+    --border:      #cabfa2;
+    --border-strong: #211f1a;
 
     /* text */
     --text:        #211f1a;
-    --text-muted:  #5c5648;
-    --text-faint:  #8c8576;
+    --text-muted:  #5b543f;
+    --text-faint:  #8a8065;
 
-    /* accent — one warm colour, used sparingly */
-    --accent:      #a8451f;
-    --accent-dim:  #833519;
-    --accent-glow: rgba(168, 69, 31, 0.16);
-    --accent-soft: rgba(168, 69, 31, 0.08);
+    /* the one sharp accent */
+    --accent:      #c8481a;
+    --accent-dim:  #9c380f;
+    --accent-glow: rgba(200, 72, 26, 0.18);
 
-    /* type */
-    --font-display: 'Fraunces', Georgia, serif;
-    --font-body:    'Inter', system-ui, sans-serif;
+    /* reversed surface, used for one deliberate high-contrast band */
+    --ink:         #201d16;
+    --ink-soft:    #2c2818;
+    --paper:       #f6f1e6;
+    --paper-muted: #c9c0a8;
+
+    /* type — no Inter, no Roboto, no Arial */
+    --font-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+    --font-body:    'Newsreader', 'Iowan Old Style', Georgia, serif;
 
     /* misc */
-    --radius:   4px;
-    --radius-sm: 3px;
-    --maxw:     1080px;
+    --radius:   2px;
+    --maxw:     1160px;
     --ease:     cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -60,8 +70,8 @@ body {
     background: var(--bg);
     color: var(--text);
     font-family: var(--font-body);
-    font-size: 16px;
-    line-height: 1.65;
+    font-size: 17px;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
@@ -70,20 +80,19 @@ body {
 h1, h2, h3, h4 {
     font-family: var(--font-display);
     font-weight: 500;
-    line-height: 1.08;
+    line-height: 1.05;
     margin: 0;
     letter-spacing: -0.01em;
 }
 
 a { color: inherit; }
 
-::selection { background: var(--accent); color: #faf8f3; }
+::selection { background: var(--accent); color: var(--paper); }
 
 /* ---------- keyboard focus (a11y) ---------- */
 :focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 3px;
-    border-radius: 2px;
 }
 /* don't show the ring for mouse users who don't need it */
 :focus:not(:focus-visible) { outline: none; }
@@ -106,13 +115,12 @@ a { color: inherit; }
     left: 0.6rem;
     z-index: 10000;
     transform: translateY(-160%);
-    background: var(--text);
-    color: var(--bg);
+    background: var(--ink);
+    color: var(--paper);
     font-family: var(--font-body);
     font-size: 0.85rem;
     font-weight: 600;
     padding: 0.6rem 1rem;
-    border-radius: 3px;
     text-decoration: none;
     transition: transform 0.2s var(--ease);
 }
@@ -124,36 +132,38 @@ main:focus { outline: none; }
 .section {
     max-width: var(--maxw);
     margin: 0 auto;
-    padding: clamp(4rem, 9vw, 7rem) clamp(1.2rem, 4vw, 2.5rem);
-    scroll-margin-top: 80px;
+    padding: clamp(4rem, 9vw, 7.5rem) clamp(1.2rem, 4vw, 2.5rem);
+    scroll-margin-top: 76px;
 }
 
 .eyebrow {
     font-family: var(--font-body);
-    font-size: 0.78rem;
+    font-size: 0.85rem;
     font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: 0.02em;
     color: var(--accent);
     margin: 0 0 1rem;
 }
 
 .section-title {
-    font-size: clamp(1.9rem, 4.2vw, 2.7rem);
+    font-size: clamp(2rem, 4.4vw, 2.9rem);
     font-weight: 500;
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.8rem;
+    max-width: 18ch;
 }
 .section-lead {
     color: var(--text-muted);
+    font-size: 1.08rem;
     max-width: 52ch;
-    margin: 0 0 2.8rem;
+    margin: 0 0 3rem;
 }
 
 /* ---------- reveal on scroll ---------- */
 .reveal {
     opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+    transform: translateY(16px);
+    transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
     will-change: opacity, transform;
 }
 .reveal.in { opacity: 1; transform: none; }
@@ -169,24 +179,24 @@ main:focus { outline: none; }
     align-items: center;
     gap: 0.5rem;
     font-family: var(--font-body);
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 600;
-    padding: 0.75rem 1.35rem;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--text);
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--radius);
+    border: 1.5px solid var(--border-strong);
     background: transparent;
     color: var(--text);
     text-decoration: none;
     cursor: pointer;
-    transition: background 0.2s var(--ease), color 0.2s, border-color 0.2s;
+    transition: background 0.15s var(--ease), color 0.15s, border-color 0.15s;
 }
-.btn:hover { background: var(--text); color: var(--bg); }
+.btn:hover { background: var(--border-strong); color: var(--bg); }
 .btn-primary {
-    background: var(--text);
-    color: var(--bg);
-    border-color: var(--text);
+    background: var(--accent);
+    color: var(--paper);
+    border-color: var(--accent);
 }
-.btn-primary:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--border-strong); border-color: var(--border-strong); color: var(--paper); }
 
 /* plain text link with a moving arrow — used instead of a second button */
 .link-arrow {
@@ -196,13 +206,13 @@ main:focus { outline: none; }
     font-weight: 600;
     color: var(--text);
     text-decoration: none;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1.5px solid var(--border-strong);
     padding-bottom: 0.15rem;
     cursor: pointer;
     background: none;
     border-left: none; border-top: none; border-right: none;
     font-family: var(--font-body);
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 .link-arrow span { transition: transform 0.2s var(--ease); }
 .link-arrow:hover { border-color: var(--accent); color: var(--accent); }

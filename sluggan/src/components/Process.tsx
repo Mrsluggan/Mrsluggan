@@ -19,7 +19,7 @@ const steps = [
 
 function Process() {
     return (
-        <section id="process" className="section section-alt">
+        <section id="process" className="section process-band">
             <div className="reveal">
                 <p className="eyebrow">How it works</p>
                 <h2 className="section-title">How a project usually goes</h2>
@@ -29,14 +29,12 @@ function Process() {
                 </p>
             </div>
 
-            <div className="entry-list reveal">
+            <div className="steps-zigzag reveal">
                 {steps.map((s, i) => (
-                    <div className="entry" key={s.title}>
-                        <span className="entry-num">{String(i + 1).padStart(2, "0")}</span>
-                        <div>
-                            <h3 className="entry-title">{s.title}</h3>
-                            <p className="entry-desc">{s.description}</p>
-                        </div>
+                    <div className="step" key={s.title}>
+                        <span className="step-num">{String(i + 1).padStart(2, "0")}</span>
+                        <h3 className="step-title">{s.title}</h3>
+                        <p className="step-desc">{s.description}</p>
                     </div>
                 ))}
             </div>
