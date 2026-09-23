@@ -5,9 +5,9 @@
     <meta charset="UTF-8" />
     <style>
         @font-face {
-            font-family: 'Space Grotesk';
+            font-family: 'Fraunces';
             font-weight: 300 700;
-            src: url(../public/fonts/space-grotesk-latin.woff2) format('woff2');
+            src: url(../public/fonts/fraunces-latin.woff2) format('woff2');
         }
         @font-face {
             font-family: 'Inter';
@@ -16,13 +16,12 @@
         }
 
         :root {
-            --bg: #ffffff;
-            --panel: #f6f7f9;
-            --border: #e2e5eb;
-            --text: #14181f;
-            --muted: #565d6b;
-            --faint: #8992a1;
-            --accent: #2b4fe0;
+            --bg: #faf8f3;
+            --border: #ddd5c4;
+            --text: #211f1a;
+            --muted: #5c5648;
+            --faint: #8c8576;
+            --accent: #a8451f;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -31,11 +30,9 @@
             width: 1200px;
             height: 630px;
             overflow: hidden;
-            background:
-                radial-gradient(760px 520px at 88% 6%, rgba(43, 79, 224, 0.10), transparent 62%),
-                var(--bg);
+            background: var(--bg);
             color: var(--text);
-            font-family: 'Space Grotesk', system-ui, sans-serif;
+            font-family: 'Fraunces', Georgia, serif;
             position: relative;
             display: flex;
             flex-direction: column;
@@ -45,68 +42,30 @@
         }
 
         .brand {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            position: relative;
-        }
-        .brand .mark {
-            width: 52px;
-            height: 52px;
-            border-radius: 14px;
-            background: var(--accent);
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 28px;
-        }
-        .brand-name {
-            font-size: 27px;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            line-height: 1.1;
-        }
-        .brand-sub {
             font-family: 'Inter', sans-serif;
             font-size: 15px;
-            color: var(--faint);
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent);
         }
 
         .middle { position: relative; }
 
         h1 {
-            font-size: 80px;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            line-height: 1.08;
-            max-width: 920px;
+            font-size: 78px;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            max-width: 980px;
         }
-        h1 .accent { color: var(--accent); }
+        h1 .accent { color: var(--accent); font-style: italic; }
 
         .role {
             font-family: 'Inter', sans-serif;
-            font-size: 23px;
+            font-size: 22px;
             color: var(--muted);
-            margin-top: 26px;
-            letter-spacing: 0.01em;
-        }
-
-        .chips {
-            display: flex;
-            gap: 11px;
-            margin-top: 34px;
-        }
-        .chip {
-            font-family: 'Inter', sans-serif;
-            font-size: 15px;
-            font-weight: 500;
-            color: var(--muted);
-            background: var(--panel);
-            border: 1px solid var(--border);
-            border-radius: 100px;
-            padding: 9px 18px;
+            margin-top: 28px;
         }
 
         .foot {
@@ -124,27 +83,16 @@
     </style>
 </head>
 <body>
-    <div class="brand">
-        <div class="mark">S</div>
-        <div>
-            <div class="brand-name">Sluggan AB</div>
-            <div class="brand-sub">Uppsala, Sweden</div>
-        </div>
-    </div>
+    <div class="brand">Sluggan AB</div>
 
     <div class="middle">
-        <h1>Straightforward <span class="accent">software</span> for small businesses.</h1>
+        <h1>Web and app development for <span class="accent">small businesses</span>.</h1>
         <div class="role">Websites · Web applications · Mobile apps</div>
-        <div class="chips">
-            <div class="chip">Web development</div>
-            <div class="chip">App development</div>
-            <div class="chip">Fixed pricing</div>
-        </div>
     </div>
 
     <div class="foot">
         <div class="url">sluggan.com</div>
-        <div class="motto">Simple, dependable software — no agency overhead.</div>
+        <div class="motto">Uppsala, Sweden</div>
     </div>
 </body>
 </html>

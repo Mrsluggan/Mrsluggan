@@ -29,12 +29,14 @@ function Process() {
                 </p>
             </div>
 
-            <div className="process-grid reveal">
+            <div className="entry-list reveal">
                 {steps.map((s, i) => (
-                    <div className="process-step" key={s.title}>
-                        <span className="process-num">{String(i + 1).padStart(2, "0")}</span>
-                        <h3 className="process-title">{s.title}</h3>
-                        <p className="process-desc">{s.description}</p>
+                    <div className="entry" key={s.title}>
+                        <span className="entry-num">{String(i + 1).padStart(2, "0")}</span>
+                        <div>
+                            <h3 className="entry-title">{s.title}</h3>
+                            <p className="entry-desc">{s.description}</p>
+                        </div>
                     </div>
                 ))}
             </div>
