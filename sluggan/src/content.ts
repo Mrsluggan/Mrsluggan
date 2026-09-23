@@ -53,6 +53,9 @@ type SiteContent = {
         emailPlaceholder: string;
         messagePlaceholder: string;
         submit: string;
+        sending: string;
+        success: string;
+        error: string;
         note: string;
         mailSubjectPrefix: string;
     };
@@ -187,7 +190,10 @@ export const content: Record<Locale, SiteContent> = {
             emailPlaceholder: "anna@example.com",
             messagePlaceholder: "Vad vill du bygga?",
             submit: "Skicka meddelande",
-            note: "Det här öppnar din egen mejlapp. Inget skickas någon annanstans.",
+            sending: "Skickar …",
+            success: "Tack! Meddelandet är skickat — jag hör av mig inom ett par dagar.",
+            error: "Något gick fel och meddelandet skickades inte. Mejla mig gärna direkt istället: ",
+            note: "Skickas direkt till min inkorg. Ingen mejlapp krävs.",
             mailSubjectPrefix: "Ny projektförfrågan från",
         },
         footer: {
@@ -322,7 +328,10 @@ export const content: Record<Locale, SiteContent> = {
             emailPlaceholder: "anna@example.com",
             messagePlaceholder: "What are you looking to build?",
             submit: "Send message",
-            note: "This opens your own mail app. Nothing is sent anywhere else.",
+            sending: "Sending …",
+            success: "Thanks! Your message is on its way — I'll get back to you within a day or two.",
+            error: "Something went wrong and the message wasn't sent. Feel free to email me directly instead: ",
+            note: "Sent straight to my inbox. No mail app required.",
             mailSubjectPrefix: "New project inquiry from",
         },
         footer: {

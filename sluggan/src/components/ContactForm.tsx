@@ -4,22 +4,46 @@ import { useContent } from "../content.ts";
 const EMAIL = "ericflyger@gmail.com";
 const PHONE_DISPLAY = "070-221 40 75";
 const PHONE_HREF = "+46702214075";
+const WEB3FORMS_ACCESS_KEY = "e161f953-404a-4799-bc50-5be00c6a2aa6";
+
+type Status = "idle" | "sending" | "success" | "error";
 
 function ContactForm() {
     const t = useContent().contact;
     const [form, setForm] = useState({ name: "", email: "", message: "" });
+    const [status, setStatus] = useState<Status>("idle");
 
     const update = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
         setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
-    // Static site, no backend: hand off to the visitor's mail client.
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    // Static site, no backend: Web3Forms relays the submission to my inbox.
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const subject = encodeURIComponent(`${t.mailSubjectPrefix} ${form.name || "sluggan.com"}`);
-        const body = encodeURIComponent(
-            `${form.message}\n\n${form.name}${form.email ? ` (${form.email})` : ""}`
-        );
-        window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+        setStatus("sending");
+
+        try {
+            const res = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: { "Content-Type": "application/json", Accept: "application/json" },
+                body: JSON.stringify({
+                    access_key: WEB3FORMS_ACCESS_KEY,
+                    subject: `${t.mailSubjectPrefix} ${form.name || "sluggan.com"}`,
+                    from_name: "sluggan.com",
+                    name: form.name,
+                    email: form.email,
+                    message: form.message,
+                }),
+            });
+            const data = await res.json();
+            if (data.success) {
+                setStatus("success");
+                setForm({ name: "", email: "", message: "" });
+            } else {
+                setStatus("error");
+            }
+        } catch {
+            setStatus("error");
+        }
     };
 
     return (
@@ -48,25 +72,43 @@ function ContactForm() {
                     </div>
                 </div>
 
-                <form className="contact-form reveal" onSubmit={handleSubmit}>
-                    <div className="field">
-                        <label htmlFor="name">{t.nameLabel}</label>
-                        <input id="name" name="name" value={form.name} onChange={update}
-                               placeholder={t.namePlaceholder} required />
-                    </div>
-                    <div className="field">
-                        <label htmlFor="email">{t.emailFieldLabel}</label>
-                        <input id="email" name="email" type="email" value={form.email} onChange={update}
-                               placeholder={t.emailPlaceholder} />
-                    </div>
-                    <div className="field">
-                        <label htmlFor="message">{t.messageLabel}</label>
-                        <textarea id="message" name="message" rows={5} value={form.message} onChange={update}
-                                  placeholder={t.messagePlaceholder} required />
-                    </div>
-                    <button type="submit" className="btn btn-primary">{t.submit}</button>
-                    <p className="contact-note">{t.note}</p>
-                </form>
+                {status === "success" ? (
+                    <p className="contact-form contact-result contact-result-ok">{t.success}</p>
+                ) : (
+                    <form className="contact-form reveal" onSubmit={handleSubmit}>
+                        <div className="field">
+                            <label htmlFor="name">{t.nameLabel}</label>
+                            <input id="name" name="name" value={form.name} onChange={update}
+                                   placeholder={t.namePlaceholder} required />
+                        </div>
+                        <div className="field">
+                            <label htmlFor="email">{t.emailFieldLabel}</label>
+                            <input id="email" name="email" type="email" value={form.email} onChange={update}
+                                   placeholder={t.emailPlaceholder} />
+                        </div>
+                        <div className="field">
+                            <label htmlFor="message">{t.messageLabel}</label>
+                            <textarea id="message" name="message" rows={5} value={form.message} onChange={update}
+                                      placeholder={t.messagePlaceholder} required />
+                        </div>
+
+                        {/* honeypot: hidden from real visitors, bots tend to fill every field */}
+                        <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off"
+                               className="sr-only" aria-hidden="true" />
+
+                        <button type="submit" className="btn btn-primary" disabled={status === "sending"}>
+                            {status === "sending" ? t.sending : t.submit}
+                        </button>
+
+                        {status === "error" && (
+                            <p className="contact-result contact-result-error">
+                                {t.error}<a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+                            </p>
+                        )}
+
+                        <p className="contact-note">{t.note}</p>
+                    </form>
+                )}
             </div>
         </section>
     );
