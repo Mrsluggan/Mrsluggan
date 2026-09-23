@@ -7,6 +7,6 @@ import App from './App.tsx'
 hydrateRoot(
   document.getElementById('root')!,
   <StrictMode>
-    <App locale="sv" />
+    <App />
   </StrictMode>,
 )

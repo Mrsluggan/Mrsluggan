@@ -2,7 +2,7 @@
 /*
  * Writes rendered markup into the built html, so crawlers that don't run JS
  * see the page instead of an empty <div id="root">. Runs after vite build.
- * Compiles entry-server.tsx to a throwaway ssr bundle and calls it per page.
+ * Compiles entry-server.tsx to a throwaway ssr bundle and calls it.
  */
 
 import { build } from "vite";
@@ -12,11 +12,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 const SSR_DIR = join(root, ".ssr-tmp");
-
-const PAGES = [
-    { locale: "sv", html: "dist/index.html" },
-    { locale: "en", html: "dist/en/index.html" },
-];
+const HTML_FILE = join(root, "dist/index.html");
 
 const ROOT_DIV = '<div id="root"></div>';
 
@@ -36,18 +32,15 @@ await build({
 
 const { render } = await import(pathToFileURL(join(SSR_DIR, "entry-server.js")).href);
 
-for (const { locale, html } of PAGES) {
-    const file = join(root, html);
-    const source = readFileSync(file, "utf8");
+const source = readFileSync(HTML_FILE, "utf8");
 
-    if (!source.includes(ROOT_DIV)) {
-        console.error(`${html}: no empty ${ROOT_DIV} to fill — did the markup change?`);
-        process.exit(1);
-    }
-
-    const markup = render(locale);
-    writeFileSync(file, source.replace(ROOT_DIV, `<div id="root">${markup}</div>`));
-    console.log(`  prerendered ${html}  ${(markup.length / 1024).toFixed(1)}KB of markup`);
+if (!source.includes(ROOT_DIV)) {
+    console.error(`dist/index.html: no empty ${ROOT_DIV} to fill — did the markup change?`);
+    process.exit(1);
 }
+
+const markup = render();
+writeFileSync(HTML_FILE, source.replace(ROOT_DIV, `<div id="root">${markup}</div>`));
+console.log(`  prerendered dist/index.html  ${(markup.length / 1024).toFixed(1)}KB of markup`);
 
 rmSync(SSR_DIR, { recursive: true, force: true });

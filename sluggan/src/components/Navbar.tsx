@@ -1,19 +1,14 @@
 import { useState, useEffect, useRef } from "react";
-import { useContent, useLocale } from "../content.ts";
+
+const sections = [
+    { label: "Tjänster", href: "#services" },
+    { label: "Så funkar det", href: "#process" },
+    { label: "Om mig", href: "#about" },
+    { label: "Frågor", href: "#faq" },
+    { label: "Kontakt", href: "#contact" },
+];
 
 const Navbar = () => {
-    const t = useContent();
-    const locale = useLocale();
-    const sections = [
-        { label: t.nav.services, href: "#services" },
-        { label: t.nav.process, href: "#process" },
-        { label: t.nav.about, href: "#about" },
-        { label: t.nav.faq, href: "#faq" },
-        { label: t.nav.contact, href: "#contact" },
-    ];
-    const otherLocaleHref = locale === "sv" ? "/en/" : "/";
-    const otherLocaleLabel = locale === "sv" ? "EN" : "SV";
-
     const [active, setActive] = useState("services");
     const [scrolled, setScrolled] = useState(false);
     const [open, setOpen] = useState(false);
@@ -42,7 +37,6 @@ const Navbar = () => {
         window.addEventListener("scroll", onScroll, { passive: true });
         onScroll();
         return () => window.removeEventListener("scroll", onScroll);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     // escape or a click outside closes the mobile menu
@@ -102,18 +96,13 @@ const Navbar = () => {
                         </a>
                     </li>
                 ))}
-                <li>
-                    <a href={otherLocaleHref} className="nav-lang" hrefLang={locale === "sv" ? "en" : "sv"}>
-                        {otherLocaleLabel}
-                    </a>
-                </li>
                 <li className="nav-cta-item">
                     <a
                         href="#contact"
                         className="btn btn-primary nav-cta"
                         onClick={(e) => scrollTo(e, "#contact")}
                     >
-                        {t.nav.cta}
+                        Kostnadsfri offert
                     </a>
                 </li>
             </ul>
