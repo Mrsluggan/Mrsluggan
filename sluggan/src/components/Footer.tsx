@@ -2,13 +2,11 @@ const Footer = () => {
     const year = new Date().getFullYear();
     return (
         <footer className="footer">
-            <span>© {year} Eric Österberg · Uppsala, Sweden 🐌</span>
+            <span>© {year} Sluggan AB · Artillerigatan 6B, Uppsala, Sweden</span>
             <span>
-                <a href="https://github.com/Mrsluggan" target="_blank" rel="noopener noreferrer">github</a>
-                {"  ·  "}
-                <a href="https://www.linkedin.com/in/eric-osterberg" target="_blank" rel="noopener noreferrer">linkedin</a>
-                {"  ·  "}
                 <a href="mailto:ericflyger@gmail.com">email</a>
+                {"  ·  "}
+                <a href="tel:+46702214075">070-221 40 75</a>
             </span>
         </footer>
     );

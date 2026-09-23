@@ -14,7 +14,6 @@ import sharp from "sharp";
 const root = fileURLToPath(new URL("..", import.meta.url));
 const CARDS = [
     { card: "scripts/og-card.html", out: "public/og.png" },
-    { card: "scripts/og-card-photos.html", out: "public/og-photos.jpg" },
 ];
 const TMP = join(root, "scripts/.og-raw.png");
 

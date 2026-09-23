@@ -1,30 +1,15 @@
 import { useState, useEffect, useRef } from "react";
-import snail from "../assets/snail.svg";
 
-/** Sections of the front page. */
 const sections = [
-    { label: "about", href: "#about" },
-    { label: "playground", href: "#playground" },
-    { label: "experience", href: "#employment" },
-    { label: "contact", href: "#contact" },
+    { label: "Services", href: "#services" },
+    { label: "How it works", href: "#process" },
+    { label: "About", href: "#about" },
+    { label: "Contact", href: "#contact" },
 ];
 
-/** Pages of their own, always plain links. */
-const pages = [{ label: "photos", href: "/photos/" }];
-
-type Props = {
-    /** "home" scrolls between sections; "sub" links back to them. */
-    variant?: "home" | "sub";
-    /** href of the current page. a prop, not window.location, because this
-     *  renders at build time where there is no window */
-    current?: string;
-};
-
-const Navbar = ({ variant = "home", current }: Props) => {
-    const onHome = variant === "home";
-    const [active, setActive] = useState(onHome ? "about" : "");
+const Navbar = () => {
+    const [active, setActive] = useState("services");
     const [scrolled, setScrolled] = useState(false);
-    const [progress, setProgress] = useState(0);
     const [open, setOpen] = useState(false);
     const navRef = useRef<HTMLElement>(null);
     const toggleRef = useRef<HTMLButtonElement>(null);
@@ -40,11 +25,6 @@ const Navbar = ({ variant = "home", current }: Props) => {
             const y = window.scrollY;
             setScrolled(y > 20);
 
-            const docH = document.documentElement.scrollHeight - window.innerHeight;
-            setProgress(docH > 0 ? (y / docH) * 100 : 0);
-
-            // only the front page has sections to spy on
-            if (!onHome) return;
             const mark = y + window.innerHeight / 3;
             let current = sections[0].href.slice(1);
             for (const { href } of sections) {
@@ -56,7 +36,7 @@ const Navbar = ({ variant = "home", current }: Props) => {
         window.addEventListener("scroll", onScroll, { passive: true });
         onScroll();
         return () => window.removeEventListener("scroll", onScroll);
-    }, [onHome]);
+    }, []);
 
     // escape or a click outside closes the mobile menu
     useEffect(() => {
@@ -84,20 +64,11 @@ const Navbar = ({ variant = "home", current }: Props) => {
         <nav
             ref={navRef}
             className={`navbar${scrolled ? " scrolled" : ""}${open ? " menu-open" : ""}`}
-            style={{ ["--scroll" as string]: `${progress}%` }}
             aria-label="Main"
         >
-            <a
-                href={onHome ? "#about" : "/"}
-                className="brand"
-                onClick={onHome ? (e) => scrollTo(e, "#about") : undefined}
-            >
-                <img src={snail} alt="" />
-                <span>
-                    sluggan
-                    <br />
-                    <span className="brand-sub">// slow but steady</span>
-                </span>
+            <a href="#top" className="brand" onClick={(e) => scrollTo(e, "#top")}>
+                <span className="brand-mark" aria-hidden="true">S</span>
+                <span>Sluggan AB</span>
             </a>
 
             <button
@@ -116,8 +87,8 @@ const Navbar = ({ variant = "home", current }: Props) => {
                 {sections.map(({ label, href }) => (
                     <li key={href}>
                         <a
-                            href={onHome ? href : `/${href}`}
-                            onClick={onHome ? (e) => scrollTo(e, href) : undefined}
+                            href={href}
+                            onClick={(e) => scrollTo(e, href)}
                             className={active === href.slice(1) ? "active" : ""}
                             aria-current={active === href.slice(1) ? "true" : undefined}
                         >
@@ -125,20 +96,15 @@ const Navbar = ({ variant = "home", current }: Props) => {
                         </a>
                     </li>
                 ))}
-                {pages.map(({ label, href }) => {
-                    const here = current === href;
-                    return (
-                        <li key={href}>
-                            <a
-                                href={href}
-                                className={here ? "active" : ""}
-                                aria-current={here ? "page" : undefined}
-                            >
-                                {label}
-                            </a>
-                        </li>
-                    );
-                })}
+                <li className="nav-cta-item">
+                    <a
+                        href="#contact"
+                        className="btn btn-primary nav-cta"
+                        onClick={(e) => scrollTo(e, "#contact")}
+                    >
+                        Get in touch
+                    </a>
+                </li>
             </ul>
         </nav>
     );

@@ -1,9 +1,9 @@
 /* ============================================================
-   Sluggan — design system
-   Backend dev / snail motif: slow, steady, hard to knock over.
+   Sluggan AB — design system
+   Clean, professional, straightforward — same as the work.
    ============================================================ */
 
-/* Self-hosted, latin subset only. Variable files, so one download covers
+/* Self-hosted, latin subset only. Variable file, so one download covers
    every weight. `npm run fonts:sync` refreshes them. */
 @font-face {
     font-family: 'Space Grotesk';
@@ -19,46 +19,30 @@
     font-weight: 100 900;
     src: url(/fonts/inter-latin.woff2) format('woff2');
 }
-@font-face {
-    font-family: 'JetBrains Mono';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 100 800;
-    src: url(/fonts/jetbrains-mono-latin.woff2) format('woff2');
-}
-@font-face {
-    font-family: 'Press Start 2P';
-    font-style: normal;
-    font-display: swap;
-    font-weight: 400;
-    src: url(/fonts/press-start-2p-latin.woff2) format('woff2');
-}
 
 :root {
     /* surfaces */
-    --bg:          #0a0b0d;
-    --bg-soft:     #101216;
-    --panel:       #14171c;
-    --panel-2:     #191d24;
-    --border:      #262b33;
-    --border-soft: #1d222a;
+    --bg:          #ffffff;
+    --bg-soft:     #f6f7f9;
+    --panel:       #ffffff;
+    --panel-2:     #f6f7f9;
+    --border:      #e2e5eb;
+    --border-soft: #ebedf1;
 
     /* text */
-    --text:        #ece9e2;
-    --text-muted:  #a2a8b2;
-    --text-faint:  #7b818b;
+    --text:        #14181f;
+    --text-muted:  #565d6b;
+    --text-faint:  #8992a1;
 
-    /* accent — snail slime */
-    --slime:       #b6f04a;
-    --slime-dim:   #8fc22e;
-    --slime-glow:  rgba(182, 240, 74, 0.16);
-    --amber:       #f0a94a;
+    /* accent */
+    --accent:      #2b4fe0;
+    --accent-dim:  #1f3cb3;
+    --accent-glow: rgba(43, 79, 224, 0.14);
+    --accent-soft: rgba(43, 79, 224, 0.07);
 
     /* type */
     --font-display: 'Space Grotesk', system-ui, sans-serif;
     --font-body:    'Inter', system-ui, sans-serif;
-    --font-mono:    'JetBrains Mono', ui-monospace, monospace;
-    --font-pixel:   'Press Start 2P', monospace;
 
     /* misc */
     --radius:   14px;
@@ -74,8 +58,7 @@ html { scroll-behavior: smooth; }
 body {
     margin: 0;
     background:
-        radial-gradient(1100px 620px at 78% -8%, rgba(182,240,74,0.07), transparent 60%),
-        radial-gradient(900px 700px at 8% 12%, rgba(240,169,74,0.045), transparent 55%),
+        radial-gradient(1100px 620px at 82% -10%, var(--accent-soft), transparent 60%),
         var(--bg);
     color: var(--text);
     font-family: var(--font-body);
@@ -96,11 +79,11 @@ h1, h2, h3, h4 {
 
 a { color: inherit; }
 
-::selection { background: var(--slime); color: #0a0b0d; }
+::selection { background: var(--accent); color: #ffffff; }
 
 /* ---------- keyboard focus (a11y) ---------- */
 :focus-visible {
-    outline: 2px solid var(--slime);
+    outline: 2px solid var(--accent);
     outline-offset: 3px;
     border-radius: 4px;
 }
@@ -125,9 +108,9 @@ a { color: inherit; }
     left: 0.6rem;
     z-index: 10000;
     transform: translateY(-160%);
-    background: var(--slime);
-    color: #0a0b0d;
-    font-family: var(--font-mono);
+    background: var(--accent);
+    color: #ffffff;
+    font-family: var(--font-body);
     font-size: 0.85rem;
     font-weight: 700;
     padding: 0.6rem 1rem;
@@ -139,12 +122,6 @@ a { color: inherit; }
 
 main:focus { outline: none; }
 
-/* thin slime scrollbar */
-::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: #22272f; border-radius: 20px; border: 2px solid var(--bg); }
-::-webkit-scrollbar-thumb:hover { background: var(--slime-dim); }
-
 /* ---------- layout helpers ---------- */
 .section {
     max-width: var(--maxw);
@@ -154,11 +131,12 @@ main:focus { outline: none; }
 }
 
 .eyebrow {
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    letter-spacing: 0.16em;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--slime);
+    color: var(--accent);
     display: inline-flex;
     align-items: center;
     gap: 0.55rem;
@@ -166,9 +144,9 @@ main:focus { outline: none; }
 }
 .eyebrow::before {
     content: "";
-    width: 22px; height: 1px;
-    background: var(--slime);
-    opacity: 0.6;
+    width: 22px; height: 2px;
+    border-radius: 2px;
+    background: var(--accent);
 }
 
 .section-title {
@@ -177,7 +155,7 @@ main:focus { outline: none; }
 }
 .section-lead {
     color: var(--text-muted);
-    max-width: 46ch;
+    max-width: 50ch;
     margin: 0 0 2.6rem;
 }
 
@@ -200,23 +178,22 @@ main:focus { outline: none; }
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
-    font-weight: 500;
-    padding: 0.72rem 1.15rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.78rem 1.3rem;
     border-radius: var(--radius-sm);
     border: 1px solid var(--border);
     background: var(--panel);
     color: var(--text);
     text-decoration: none;
     cursor: pointer;
-    transition: transform 0.2s var(--ease), border-color 0.2s, background 0.2s, color 0.2s;
+    transition: transform 0.2s var(--ease), border-color 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s;
 }
-.btn:hover { transform: translateY(-2px); border-color: var(--slime-dim); }
+.btn:hover { transform: translateY(-2px); border-color: var(--accent); }
 .btn-primary {
-    background: var(--slime);
-    color: #0a0b0d;
-    border-color: var(--slime);
-    font-weight: 700;
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
 }
-.btn-primary:hover { background: #c6ff5c; box-shadow: 0 8px 30px var(--slime-glow); }
+.btn-primary:hover { background: var(--accent-dim); border-color: var(--accent-dim); box-shadow: 0 10px 30px var(--accent-glow); }

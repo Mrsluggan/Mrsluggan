@@ -1,6 +1,9 @@
 import { useState } from "react";
 
 const EMAIL = "ericflyger@gmail.com";
+const PHONE_DISPLAY = "070-221 40 75";
+const PHONE_HREF = "+46702214075";
+const ADDRESS = ["Artillerigatan 6B", "Uppsala, Sweden"];
 
 function ContactForm() {
     const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -11,7 +14,7 @@ function ContactForm() {
     // Static site, no backend: hand off to the visitor's mail client.
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const subject = encodeURIComponent(`Hello from ${form.name || "your site"}`);
+        const subject = encodeURIComponent(`New project inquiry from ${form.name || "your site"}`);
         const body = encodeURIComponent(
             `${form.message}\n\n${form.name}${form.email ? ` (${form.email})` : ""}`
         );
@@ -21,11 +24,11 @@ function ContactForm() {
     return (
         <section id="contact" className="section">
             <div className="reveal">
-                <p className="eyebrow">03 · contact</p>
-                <h2 className="section-title">Get in touch</h2>
+                <p className="eyebrow">Contact</p>
+                <h2 className="section-title">Let's talk about your project</h2>
                 <p className="section-lead">
-                    Open to backend roles, interesting systems work, and the odd
-                    open-source project. Email is the easiest way to reach me.
+                    Tell me what you're trying to build. I'll get back to you within a
+                    day or two.
                 </p>
             </div>
 
@@ -34,45 +37,45 @@ function ContactForm() {
                     <a className="panel contact-link" href={`mailto:${EMAIL}`}>
                         <span className="ci">✉</span>
                         <span>
-                            <span className="cl">email</span><br />
+                            <span className="cl">Email</span><br />
                             {EMAIL}
                         </span>
                     </a>
-                    <a className="panel contact-link" href="https://github.com/Mrsluggan"
-                       target="_blank" rel="noopener noreferrer">
-                        <span className="ci">⌥</span>
+                    <a className="panel contact-link" href={`tel:${PHONE_HREF}`}>
+                        <span className="ci">☎</span>
                         <span>
-                            <span className="cl">github</span><br />
-                            @Mrsluggan
+                            <span className="cl">Phone</span><br />
+                            {PHONE_DISPLAY}
                         </span>
                     </a>
-                    <a className="panel contact-link" href="https://www.linkedin.com/in/eric-osterberg"
-                       target="_blank" rel="noopener noreferrer">
-                        <span className="ci">in</span>
+                    <div className="panel contact-link contact-link-static">
+                        <span className="ci">⌂</span>
                         <span>
-                            <span className="cl">linkedin</span><br />
-                            eric-osterberg
+                            <span className="cl">Address</span><br />
+                            {ADDRESS.map((line) => (
+                                <span key={line}>{line}<br /></span>
+                            ))}
                         </span>
-                    </a>
+                    </div>
                 </div>
 
                 <form className="contact-form reveal" onSubmit={handleSubmit}>
                     <div className="field">
                         <label htmlFor="name">Your name</label>
                         <input id="name" name="name" value={form.name} onChange={update}
-                               placeholder="Ada Lovelace" required />
+                               placeholder="Anna Andersson" required />
                     </div>
                     <div className="field">
                         <label htmlFor="email">Your email</label>
                         <input id="email" name="email" type="email" value={form.email} onChange={update}
-                               placeholder="ada@example.com" />
+                               placeholder="anna@example.com" />
                     </div>
                     <div className="field">
                         <label htmlFor="message">Message</label>
                         <textarea id="message" name="message" rows={5} value={form.message} onChange={update}
-                                  placeholder="What are we building?" required />
+                                  placeholder="What are you looking to build?" required />
                     </div>
-                    <button type="submit" className="btn btn-primary">Send message ▸</button>
+                    <button type="submit" className="btn btn-primary">Send message</button>
                     <p className="contact-note">
                         This opens your own mail app. Nothing is sent anywhere else.
                     </p>
