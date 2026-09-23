@@ -67,18 +67,18 @@ export const content: Record<Locale, SiteContent> = {
             about: "Om mig",
             faq: "Frågor",
             contact: "Kontakt",
-            cta: "Kontakta mig",
+            cta: "Kostnadsfri offert",
         },
         hero: {
             kicker: "Sluggan AB · Uppsala, Sverige",
             h1a: "Webb- och apputveckling",
             h1b: "för småföretag.",
             intro: "Jag heter Eric och driver Sluggan AB. Jag bygger webbplatser och appar åt småföretag och privatpersoner som vill ha något som fungerar, utan att gå via en stor byrå eller en lång säljprocess. Berätta vad du vill göra, så funderar vi tillsammans ut vad som faktiskt är vettigt att bygga.",
-            ctaPrimary: "Kontakta mig",
+            ctaPrimary: "Få en kostnadsfri offert",
             ctaSecondary: "Se vad jag gör",
             asideLabel: "Det jag bygger",
             asideItems: ["Webbplatser", "Webbapplikationer", "Mobilappar"],
-            asideNote: "En person, direkt kontakt, ett fast pris som bestäms i förväg.",
+            asideNote: "En person, direkt kontakt, kostnadsfri offert och ett fast pris som bestäms i förväg.",
         },
         services: {
             eyebrow: "Tjänster",
@@ -144,7 +144,7 @@ export const content: Record<Locale, SiteContent> = {
             items: [
                 {
                     q: "Vad kostar det?",
-                    a: "Beror helt på omfattningen. En enkel webbplats kostar betydligt mindre än en skräddarsydd app med inloggning och backend. Jag bestämmer alltid ett fast pris innan jag börjar, när jag väl förstår vad du faktiskt behöver — hör av dig så ger jag dig en riktig siffra, inte ett löst intervall.",
+                    a: "Beror helt på omfattningen. En enkel webbplats kostar betydligt mindre än en skräddarsydd app med inloggning och backend. Hör av dig så får du en kostnadsfri offert med ett fast pris, innan något börjar byggas.",
                 },
                 {
                     q: "Hur lång tid tar det?",
@@ -175,7 +175,7 @@ export const content: Record<Locale, SiteContent> = {
         contact: {
             eyebrow: "Kontakt",
             title: "Kontakta mig",
-            lead: "Skicka ett meddelande med ungefär vad du är ute efter, eller hör av dig direkt via mejl eller telefon. Jag svarar oftast inom ett par dagar — inget säljsamtal krävs först.",
+            lead: "Skicka ett meddelande med ungefär vad du är ute efter, eller hör av dig direkt via mejl eller telefon. Du får en kostnadsfri offert — jag svarar oftast inom ett par dagar, och inget säljsamtal krävs först.",
             emailLabel: "E-post",
             phoneLabel: "Telefon",
             addressLabel: "Adress",
@@ -202,18 +202,18 @@ export const content: Record<Locale, SiteContent> = {
             about: "About",
             faq: "FAQ",
             contact: "Contact",
-            cta: "Get in touch",
+            cta: "Free quote",
         },
         hero: {
             kicker: "Sluggan AB · Uppsala, Sweden",
             h1a: "Web and app development",
             h1b: "for small businesses.",
             intro: "I'm Eric, and I run Sluggan AB. I build websites and apps for small businesses and private customers who need something that works, without going through a big agency or a long sales process. Tell me what you're trying to do, and we'll figure out together what actually makes sense to build.",
-            ctaPrimary: "Get in touch",
+            ctaPrimary: "Get a free quote",
             ctaSecondary: "See what I do",
             asideLabel: "What I build",
             asideItems: ["Websites", "Web applications", "Mobile apps"],
-            asideNote: "One person, direct communication, a fixed price agreed up front.",
+            asideNote: "One person, direct communication, a free quote and a fixed price agreed up front.",
         },
         services: {
             eyebrow: "Services",
@@ -279,7 +279,7 @@ export const content: Record<Locale, SiteContent> = {
             items: [
                 {
                     q: "What does it cost?",
-                    a: "Depends entirely on scope. A simple website is a lot cheaper than a custom app with logins and a backend. I always agree on a fixed price before I start, once I understand what you actually need — get in touch and I'll give you a real number, not a vague range.",
+                    a: "Depends entirely on scope. A simple website is a lot cheaper than a custom app with logins and a backend. Get in touch and you'll get a free quote with a fixed price, before anything gets built.",
                 },
                 {
                     q: "How long does it take?",
@@ -310,7 +310,7 @@ export const content: Record<Locale, SiteContent> = {
         contact: {
             eyebrow: "Contact",
             title: "Get in touch",
-            lead: "Send me a message with roughly what you're looking for, or just reach out directly by email or phone. I usually reply within a day or two — no sales call required first.",
+            lead: "Send me a message with roughly what you're looking for, or just reach out directly by email or phone. You'll get a free quote — I usually reply within a day or two, and no sales call required first.",
             emailLabel: "Email",
             phoneLabel: "Phone",
             addressLabel: "Address",
