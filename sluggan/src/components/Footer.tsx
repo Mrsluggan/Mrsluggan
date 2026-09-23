@@ -1,13 +1,10 @@
-import { useContent } from "../content.ts";
-
 const Footer = () => {
-    const t = useContent().footer;
     const year = new Date().getFullYear();
     return (
         <footer className="footer">
-            <span>© {year} Sluggan AB · {t.addressLine}</span>
+            <span>© {year} Sluggan AB · Artillerigatan 6B, Uppsala, Sverige</span>
             <span>
-                <a href="mailto:ericflyger@gmail.com">{t.emailLabel}</a>
+                <a href="mailto:ericflyger@gmail.com">mejl</a>
                 {"  ·  "}
                 <a href="tel:+46702214075">070-221 40 75</a>
             </span>

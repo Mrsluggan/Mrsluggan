@@ -8,14 +8,12 @@ import FAQ from "./components/FAQ.tsx";
 import ContactForm from "./components/ContactForm.tsx";
 import Footer from "./components/Footer.tsx";
 import { useReveal } from "./hooks/useReveal.ts";
-import { LocaleProvider } from "./i18n.tsx";
-import type { Locale } from "./content.ts";
 
-function App({ locale }: { locale: Locale }) {
+function App() {
     useReveal();
 
     return (
-        <LocaleProvider locale={locale}>
+        <>
             <a href="#main" className="skip-link">Skip to content</a>
             <Navbar />
             <main id="main" tabIndex={-1}>
@@ -27,7 +25,7 @@ function App({ locale }: { locale: Locale }) {
                 <ContactForm />
             </main>
             <Footer />
-        </LocaleProvider>
+        </>
     );
 }
 
