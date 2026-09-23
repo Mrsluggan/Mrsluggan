@@ -2,7 +2,8 @@
 // Everything reachable from here has to render without a DOM.
 import { renderToString } from "react-dom/server";
 import App from "./App.tsx";
+import type { Locale } from "./content.ts";
 
-export function render(): string {
-    return renderToString(<App />);
+export function render(locale: Locale): string {
+    return renderToString(<App locale={locale} />);
 }

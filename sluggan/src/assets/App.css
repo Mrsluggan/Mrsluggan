@@ -50,6 +50,16 @@
 }
 .nav-links a:hover { color: var(--text); }
 .nav-links a.active { color: var(--text); border-color: var(--accent); }
+.nav-links a.nav-lang {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--text-faint);
+    border: 1.5px solid var(--border);
+    padding: 0.3rem 0.55rem;
+    margin-left: 0.4rem;
+}
+.nav-links a.nav-lang:hover { color: var(--accent); border-color: var(--accent); }
 .nav-cta-item { margin-left: 0.5rem; }
 .nav-links a.nav-cta {
     color: var(--paper);
