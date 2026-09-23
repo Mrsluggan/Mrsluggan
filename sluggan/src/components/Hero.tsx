@@ -1,12 +1,12 @@
 function Hero() {
     return (
         <section id="top" className="hero">
-            <div className="hero-inner reveal">
+            <div className="hero-main reveal">
                 <p className="hero-kicker">Sluggan AB · Uppsala, Sweden</p>
 
                 <h1>
-                    Web and app development<br />
-                    for <span className="accent">small businesses</span>.
+                    Web and app development
+                    <span className="accent">for small businesses.</span>
                 </h1>
 
                 <p className="hero-intro">
@@ -33,15 +33,19 @@ function Hero() {
                         See what I do <span>→</span>
                     </a>
                 </div>
-
-                <p className="hero-chips">
-                    <span>Websites</span>
-                    <span className="sep">·</span>
-                    <span>Web applications</span>
-                    <span className="sep">·</span>
-                    <span>Mobile apps</span>
-                </p>
             </div>
+
+            <aside className="hero-aside reveal">
+                <p className="hero-aside-label">What I build</p>
+                <ul className="hero-aside-list">
+                    <li><span className="n">01</span> Websites</li>
+                    <li><span className="n">02</span> Web applications</li>
+                    <li><span className="n">03</span> Mobile apps</li>
+                </ul>
+                <p className="hero-aside-note">
+                    One person, direct communication, a fixed price agreed up front.
+                </p>
+            </aside>
         </section>
     );
 }

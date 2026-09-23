@@ -7,7 +7,7 @@
     <meta name="robots" content="noindex" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <style>
-        /* Self-hosted, same face the main site uses. */
+        /* Self-hosted, same faces the main site uses. */
         @font-face {
             font-family: 'Fraunces';
             font-style: normal;
@@ -15,19 +15,33 @@
             font-weight: 300 700;
             src: url(/fonts/fraunces-latin.woff2) format('woff2');
         }
+        @font-face {
+            font-family: 'Fraunces';
+            font-style: italic;
+            font-display: swap;
+            font-weight: 300 700;
+            src: url(/fonts/fraunces-latin-italic.woff2) format('woff2');
+        }
+        @font-face {
+            font-family: 'Newsreader';
+            font-style: normal;
+            font-display: swap;
+            font-weight: 200 800;
+            src: url(/fonts/newsreader-latin.woff2) format('woff2');
+        }
         :root {
-            --bg: #faf8f3;
-            --border: #ddd5c4;
+            --bg: #f6f1e6;
+            --border-strong: #211f1a;
             --text: #211f1a;
-            --muted: #5c5648;
-            --accent: #a8451f;
+            --muted: #5b543f;
+            --accent: #c8481a;
         }
         * { box-sizing: border-box; }
         html, body { height: 100%; margin: 0; }
         body {
             background: var(--bg);
             color: var(--text);
-            font-family: 'Fraunces', Georgia, serif;
+            font-family: 'Newsreader', Georgia, serif;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -37,32 +51,36 @@
         .wrap { max-width: 440px; }
         .mark {
             font-size: 0.85rem;
-            font-family: system-ui, sans-serif;
             font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
+            font-style: italic;
+            letter-spacing: 0.02em;
             color: var(--accent);
-            margin-bottom: 1.6rem;
+            margin-bottom: 1.8rem;
             display: block;
         }
-        h1 { font-weight: 500; font-size: clamp(2.2rem, 8vw, 3.2rem); margin: 0 0 0.6rem; letter-spacing: -0.02em; }
-        h1 .accent { color: var(--accent); font-style: italic; }
-        p { color: var(--muted); line-height: 1.6; margin: 0 0 2rem; font-family: system-ui, sans-serif; }
+        h1 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-weight: 500;
+            font-size: clamp(2.2rem, 8vw, 3.2rem);
+            margin: 0 0 0.6rem;
+            letter-spacing: -0.02em;
+        }
+        h1 .accent { color: var(--accent); font-style: italic; font-weight: 400; }
+        p { color: var(--muted); line-height: 1.6; margin: 0 0 2rem; font-size: 1.08rem; }
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            font-family: system-ui, sans-serif;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             text-decoration: none;
             color: var(--bg);
-            background: var(--text);
+            background: var(--border-strong);
             padding: 0.75rem 1.3rem;
-            border-radius: 3px;
-            transition: background 0.2s;
+            border: 1.5px solid var(--border-strong);
+            transition: background 0.2s, border-color 0.2s;
         }
-        .btn:hover { background: var(--accent); }
+        .btn:hover { background: var(--accent); border-color: var(--accent); }
         .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
     </style>
 </head>
