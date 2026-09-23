@@ -1,8 +1,8 @@
 const highlights = [
-    "Direct communication — you talk to the person building your project, always.",
-    "Fixed, transparent pricing agreed before work starts.",
-    "Small and one-off projects welcome, not just retainers.",
-    "Background in production software engineering, not just freelancing.",
+    "You'll always be talking directly to me, not a project manager or a sales rep.",
+    "I agree on a price before I start, so nothing changes on you later.",
+    "Small or one-off jobs are welcome, not just ongoing retainers.",
+    "This is my actual profession, not a side project I'm learning on.",
 ];
 
 function About() {
@@ -10,21 +10,26 @@ function About() {
         <section id="about" className="section">
             <div className="reveal">
                 <p className="eyebrow">About</p>
-                <h2 className="section-title">Run by an engineer, not an agency</h2>
+                <h2 className="section-title">Who you'd be working with</h2>
                 <p className="section-lead">
-                    Sluggan AB is run by Eric Österberg, a software engineer based in
-                    Uppsala, Sweden.
+                    Sluggan AB is me — Eric Österberg, a software engineer based in
+                    Uppsala.
                 </p>
             </div>
 
             <div className="about-grid reveal">
                 <p className="about-bio">
-                    Professional background spans backend systems in C#/.NET and Java/Spring
-                    Boot, and full-stack web development with React and TypeScript —
-                    including production work on positioning and integration systems for
-                    the security industry. Sluggan AB brings that same engineering
-                    discipline to smaller, practical projects: the goal is software that
-                    quietly does its job, not extra complexity you'll have to manage later.
+                    I've spent the last few years working as a professional developer,
+                    mostly backend systems in C#/.NET and Java, and full-stack web work
+                    with React and TypeScript. Day to day that's meant things like indoor
+                    positioning systems and API integrations for the security industry,
+                    but I've built plenty of smaller things on the side too.
+                    <br /><br />
+                    I started Sluggan AB because a lot of small businesses end up either
+                    going without a proper website or app, or paying agency prices for
+                    something a lot simpler than what they actually need. I'd rather just
+                    build the thing you need, talk to you directly while I'm doing it, and
+                    charge a fair, fixed price for it.
                 </p>
 
                 <ul className="about-highlights">

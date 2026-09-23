@@ -1,19 +1,19 @@
 const steps = [
     {
-        title: "Chat",
-        description: "A short, no-pressure conversation about what you need and what it should do.",
+        title: "We talk",
+        description: "A quick call or a few emails back and forth about what you need and what problem it's actually solving.",
     },
     {
-        title: "Plan",
-        description: "A clear, fixed-scope plan with a price up front — no surprises, no scope creep.",
+        title: "I put together a plan",
+        description: "A clear scope and a price, agreed before anything gets built, so there are no surprises halfway through.",
     },
     {
-        title: "Build",
-        description: "I build it, keeping you in the loop with regular, plain-language updates.",
+        title: "I build it",
+        description: "You'll hear from me along the way, not just at the very end — with real updates, not vague status reports.",
     },
     {
-        title: "Support",
-        description: "Launch, then ongoing support and small changes if and when you need them.",
+        title: "You're not on your own after",
+        description: "Once it's live I'm still around for questions, small fixes, or bigger changes down the line.",
     },
 ];
 
@@ -22,10 +22,10 @@ function Process() {
         <section id="process" className="section section-alt">
             <div className="reveal">
                 <p className="eyebrow">How it works</p>
-                <h2 className="section-title">Four simple steps</h2>
+                <h2 className="section-title">How a project usually goes</h2>
                 <p className="section-lead">
-                    No jargon, no lengthy contracts — just a clear path from idea to something
-                    you can use.
+                    Every project is a bit different, but it tends to follow roughly
+                    this shape.
                 </p>
             </div>
 
