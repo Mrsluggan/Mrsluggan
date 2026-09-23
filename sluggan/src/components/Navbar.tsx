@@ -67,8 +67,7 @@ const Navbar = () => {
             aria-label="Main"
         >
             <a href="#top" className="brand" onClick={(e) => scrollTo(e, "#top")}>
-                <span className="brand-mark" aria-hidden="true">S</span>
-                <span>Sluggan AB</span>
+                Sluggan <span className="brand-mark">AB</span>
             </a>
 
             <button

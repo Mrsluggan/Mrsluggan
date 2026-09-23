@@ -1,16 +1,16 @@
 /* ============================================================
    Sluggan AB — design system
-   Clean, professional, straightforward — same as the work.
+   Paper, ink, and one warm accent. Quiet on purpose.
    ============================================================ */
 
 /* Self-hosted, latin subset only. Variable file, so one download covers
    every weight. `npm run fonts:sync` refreshes them. */
 @font-face {
-    font-family: 'Space Grotesk';
+    font-family: 'Fraunces';
     font-style: normal;
     font-display: swap;
     font-weight: 300 700;
-    src: url(/fonts/space-grotesk-latin.woff2) format('woff2');
+    src: url(/fonts/fraunces-latin.woff2) format('woff2');
 }
 @font-face {
     font-family: 'Inter';
@@ -22,31 +22,31 @@
 
 :root {
     /* surfaces */
-    --bg:          #ffffff;
-    --bg-soft:     #f6f7f9;
-    --panel:       #ffffff;
-    --panel-2:     #f6f7f9;
-    --border:      #e2e5eb;
-    --border-soft: #ebedf1;
+    --bg:          #faf8f3;
+    --bg-soft:     #f2ede2;
+    --panel:       #faf8f3;
+    --panel-2:     #f2ede2;
+    --border:      #ddd5c4;
+    --border-soft: #e7e1d3;
 
     /* text */
-    --text:        #14181f;
-    --text-muted:  #565d6b;
-    --text-faint:  #8992a1;
+    --text:        #211f1a;
+    --text-muted:  #5c5648;
+    --text-faint:  #8c8576;
 
-    /* accent */
-    --accent:      #2b4fe0;
-    --accent-dim:  #1f3cb3;
-    --accent-glow: rgba(43, 79, 224, 0.14);
-    --accent-soft: rgba(43, 79, 224, 0.07);
+    /* accent — one warm colour, used sparingly */
+    --accent:      #a8451f;
+    --accent-dim:  #833519;
+    --accent-glow: rgba(168, 69, 31, 0.16);
+    --accent-soft: rgba(168, 69, 31, 0.08);
 
     /* type */
-    --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --font-display: 'Fraunces', Georgia, serif;
     --font-body:    'Inter', system-ui, sans-serif;
 
     /* misc */
-    --radius:   14px;
-    --radius-sm: 9px;
+    --radius:   4px;
+    --radius-sm: 3px;
     --maxw:     1080px;
     --ease:     cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -57,9 +57,7 @@ html { scroll-behavior: smooth; }
 
 body {
     margin: 0;
-    background:
-        radial-gradient(1100px 620px at 82% -10%, var(--accent-soft), transparent 60%),
-        var(--bg);
+    background: var(--bg);
     color: var(--text);
     font-family: var(--font-body);
     font-size: 16px;
@@ -71,21 +69,21 @@ body {
 
 h1, h2, h3, h4 {
     font-family: var(--font-display);
-    font-weight: 600;
-    line-height: 1.1;
+    font-weight: 500;
+    line-height: 1.08;
     margin: 0;
     letter-spacing: -0.01em;
 }
 
 a { color: inherit; }
 
-::selection { background: var(--accent); color: #ffffff; }
+::selection { background: var(--accent); color: #faf8f3; }
 
 /* ---------- keyboard focus (a11y) ---------- */
 :focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 3px;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 /* don't show the ring for mouse users who don't need it */
 :focus:not(:focus-visible) { outline: none; }
@@ -108,13 +106,13 @@ a { color: inherit; }
     left: 0.6rem;
     z-index: 10000;
     transform: translateY(-160%);
-    background: var(--accent);
-    color: #ffffff;
+    background: var(--text);
+    color: var(--bg);
     font-family: var(--font-body);
     font-size: 0.85rem;
-    font-weight: 700;
+    font-weight: 600;
     padding: 0.6rem 1rem;
-    border-radius: 8px;
+    border-radius: 3px;
     text-decoration: none;
     transition: transform 0.2s var(--ease);
 }
@@ -126,43 +124,35 @@ main:focus { outline: none; }
 .section {
     max-width: var(--maxw);
     margin: 0 auto;
-    padding: clamp(4.5rem, 10vw, 8rem) clamp(1.2rem, 4vw, 2.5rem);
+    padding: clamp(4rem, 9vw, 7rem) clamp(1.2rem, 4vw, 2.5rem);
     scroll-margin-top: 80px;
 }
 
 .eyebrow {
-    font-family: var(--font-display);
-    font-size: 0.8rem;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
     font-weight: 600;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--accent);
-    display: inline-flex;
-    align-items: center;
-    gap: 0.55rem;
     margin: 0 0 1rem;
-}
-.eyebrow::before {
-    content: "";
-    width: 22px; height: 2px;
-    border-radius: 2px;
-    background: var(--accent);
 }
 
 .section-title {
-    font-size: clamp(1.9rem, 4.5vw, 2.9rem);
-    margin-bottom: 0.6rem;
+    font-size: clamp(1.9rem, 4.2vw, 2.7rem);
+    font-weight: 500;
+    margin-bottom: 0.7rem;
 }
 .section-lead {
     color: var(--text-muted);
-    max-width: 50ch;
-    margin: 0 0 2.6rem;
+    max-width: 52ch;
+    margin: 0 0 2.8rem;
 }
 
 /* ---------- reveal on scroll ---------- */
 .reveal {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(18px);
     transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
     will-change: opacity, transform;
 }
@@ -181,19 +171,39 @@ main:focus { outline: none; }
     font-family: var(--font-body);
     font-size: 0.95rem;
     font-weight: 600;
-    padding: 0.78rem 1.3rem;
+    padding: 0.75rem 1.35rem;
     border-radius: var(--radius-sm);
-    border: 1px solid var(--border);
-    background: var(--panel);
+    border: 1px solid var(--text);
+    background: transparent;
     color: var(--text);
     text-decoration: none;
     cursor: pointer;
-    transition: transform 0.2s var(--ease), border-color 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s;
+    transition: background 0.2s var(--ease), color 0.2s, border-color 0.2s;
 }
-.btn:hover { transform: translateY(-2px); border-color: var(--accent); }
+.btn:hover { background: var(--text); color: var(--bg); }
 .btn-primary {
-    background: var(--accent);
-    color: #ffffff;
-    border-color: var(--accent);
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
 }
-.btn-primary:hover { background: var(--accent-dim); border-color: var(--accent-dim); box-shadow: 0 10px 30px var(--accent-glow); }
+.btn-primary:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+/* plain text link with a moving arrow — used instead of a second button */
+.link-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 600;
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.15rem;
+    cursor: pointer;
+    background: none;
+    border-left: none; border-top: none; border-right: none;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+}
+.link-arrow span { transition: transform 0.2s var(--ease); }
+.link-arrow:hover { border-color: var(--accent); color: var(--accent); }
+.link-arrow:hover span { transform: translateX(3px); }

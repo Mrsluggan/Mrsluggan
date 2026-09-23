@@ -35,28 +35,19 @@ function ContactForm() {
 
             <div className="contact-wrap">
                 <div className="contact-links reveal">
-                    <a className="panel contact-link" href={`mailto:${EMAIL}`}>
-                        <span className="ci">✉</span>
-                        <span>
-                            <span className="cl">Email</span><br />
-                            {EMAIL}
-                        </span>
+                    <a className="contact-link" href={`mailto:${EMAIL}`}>
+                        <span className="cl">Email</span>
+                        {EMAIL}
                     </a>
-                    <a className="panel contact-link" href={`tel:${PHONE_HREF}`}>
-                        <span className="ci">☎</span>
-                        <span>
-                            <span className="cl">Phone</span><br />
-                            {PHONE_DISPLAY}
-                        </span>
+                    <a className="contact-link" href={`tel:${PHONE_HREF}`}>
+                        <span className="cl">Phone</span>
+                        {PHONE_DISPLAY}
                     </a>
-                    <div className="panel contact-link contact-link-static">
-                        <span className="ci">⌂</span>
-                        <span>
-                            <span className="cl">Address</span><br />
-                            {ADDRESS.map((line) => (
-                                <span key={line}>{line}<br /></span>
-                            ))}
-                        </span>
+                    <div className="contact-link contact-link-static">
+                        <span className="cl">Address</span>
+                        {ADDRESS.map((line) => (
+                            <span key={line}>{line}<br /></span>
+                        ))}
                     </div>
                 </div>
 

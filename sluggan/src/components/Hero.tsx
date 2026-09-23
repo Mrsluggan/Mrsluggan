@@ -2,10 +2,7 @@ function Hero() {
     return (
         <section id="top" className="hero">
             <div className="hero-inner reveal">
-                <span className="hero-status">
-                    <span className="status-dot" />
-                    Based in Uppsala, Sweden
-                </span>
+                <p className="hero-kicker">Sluggan AB · Uppsala, Sweden</p>
 
                 <h1>
                     Web and app development<br />
@@ -29,19 +26,21 @@ function Hero() {
                         Get in touch
                     </a>
                     <a
-                        className="btn"
+                        className="link-arrow"
                         href="#services"
                         onClick={(e) => { e.preventDefault(); document.getElementById("services")?.scrollIntoView({ behavior: "smooth" }); }}
                     >
-                        See what I do
+                        See what I do <span>→</span>
                     </a>
                 </div>
 
-                <div className="hero-chips">
-                    <span className="chip">Websites</span>
-                    <span className="chip">Web applications</span>
-                    <span className="chip">Mobile apps</span>
-                </div>
+                <p className="hero-chips">
+                    <span>Websites</span>
+                    <span className="sep">·</span>
+                    <span>Web applications</span>
+                    <span className="sep">·</span>
+                    <span>Mobile apps</span>
+                </p>
             </div>
         </section>
     );

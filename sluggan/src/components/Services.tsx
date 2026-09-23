@@ -29,11 +29,14 @@ function Services() {
                 </p>
             </div>
 
-            <div className="services-grid reveal">
-                {services.map((s) => (
-                    <div className="panel service-card" key={s.title}>
-                        <h3 className="service-title">{s.title}</h3>
-                        <p className="service-desc">{s.description}</p>
+            <div className="entry-list reveal">
+                {services.map((s, i) => (
+                    <div className="entry" key={s.title}>
+                        <span className="entry-num">{String(i + 1).padStart(2, "0")}</span>
+                        <div>
+                            <h3 className="entry-title">{s.title}</h3>
+                            <p className="entry-desc">{s.description}</p>
+                        </div>
                     </div>
                 ))}
             </div>
