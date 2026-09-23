@@ -25,10 +25,11 @@ function ContactForm() {
         <section id="contact" className="section">
             <div className="reveal">
                 <p className="eyebrow">Contact</p>
-                <h2 className="section-title">Let's talk about your project</h2>
+                <h2 className="section-title">Get in touch</h2>
                 <p className="section-lead">
-                    Tell me what you're trying to build. I'll get back to you within a
-                    day or two.
+                    Send me a message with roughly what you're looking for, or just
+                    reach out directly by email or phone. I usually reply within a day
+                    or two — no sales call required first.
                 </p>
             </div>
 

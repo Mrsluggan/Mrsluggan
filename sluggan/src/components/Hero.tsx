@@ -8,14 +8,16 @@ function Hero() {
                 </span>
 
                 <h1>
-                    Straightforward software,<br />
-                    built for <span className="accent">small businesses</span>.
+                    Web and app development<br />
+                    for <span className="accent">small businesses</span>.
                 </h1>
 
                 <p className="hero-intro">
-                    Sluggan AB designs and builds websites, web apps and mobile apps for
-                    small businesses and individuals — simple, dependable solutions,
-                    without the agency overhead.
+                    I'm Eric, and I run Sluggan AB. I build websites and apps for small
+                    businesses and private customers who need something that works, without
+                    going through a big agency or a long sales process. Tell me what you're
+                    trying to do, and we'll figure out together what actually makes sense to
+                    build.
                 </p>
 
                 <div className="hero-actions">
