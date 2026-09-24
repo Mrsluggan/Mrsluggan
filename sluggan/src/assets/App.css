@@ -302,7 +302,13 @@
 /* ---------------- Projekt (case studies) ---------------- */
 .case-list { display: flex; flex-direction: column; gap: 1.5px; }
 .case-tile { border: 1.5px solid var(--border-strong); padding: 2.6rem clamp(1.5rem, 4vw, 3rem); }
-.case-title { font-size: 1.6rem; margin-bottom: 1.8rem; }
+.case-title { font-size: 1.6rem; margin-bottom: 0.4rem; }
+.case-meta {
+    margin: 0 0 1.8rem;
+    font-style: italic;
+    font-size: 0.92rem;
+    color: var(--accent);
+}
 .case-fields {
     display: grid;
     grid-template-columns: 1fr 1fr;
