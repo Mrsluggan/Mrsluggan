@@ -47,6 +47,9 @@
         }
 
         .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             font-family: 'Newsreader', serif;
             font-size: 16px;
             font-weight: 600;
@@ -87,7 +90,13 @@
     </style>
 </head>
 <body>
-    <div class="brand">Sluggan AB</div>
+    <div class="brand">
+        <svg width="22" height="22" viewBox="0 0 100 100">
+            <path d="M78 55 A28 28 0 1 1 50 22" fill="none" stroke="var(--accent)" stroke-width="9" stroke-linecap="round" />
+            <path d="M50 22 A16 16 0 1 1 34 38" fill="none" stroke="var(--accent)" stroke-width="9" stroke-linecap="round" />
+        </svg>
+        Sluggan AB
+    </div>
 
     <div class="middle">
         <h1>Jag bygger system, <span class="accent">hemsidor och appar</span>.</h1>

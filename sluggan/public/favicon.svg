@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <rect width="32" height="32" fill="#f6f1e6"/>
-  <text x="16" y="23" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="600" font-size="20" fill="#2f4a34">S</text>
+  <path d="M25 17.6 A9 9 0 1 1 16 7" fill="none" stroke="#2f4a34" stroke-width="2.8" stroke-linecap="round"/>
+  <path d="M16 7 A5 5 0 1 1 10.9 12.2" fill="none" stroke="#2f4a34" stroke-width="2.8" stroke-linecap="round"/>
 </svg>
