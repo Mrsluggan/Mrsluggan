@@ -1,7 +1,7 @@
 function Hero() {
     return (
         <section id="top" className="hero">
-            <div className="hero-main reveal">
+            <div className="hero-main">
                 <p className="hero-kicker">Sluggan · Uppsala, Sverige</p>
 
                 <h1>
@@ -34,7 +34,7 @@ function Hero() {
                 </div>
             </div>
 
-            <aside className="hero-aside reveal">
+            <aside className="hero-aside">
                 <p className="hero-aside-label">Det jag bygger</p>
                 <ul className="hero-aside-list">
                     <li><span className="n">01</span> Systemutveckling & konsultuppdrag</li>

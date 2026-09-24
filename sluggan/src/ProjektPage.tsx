@@ -33,7 +33,7 @@ function ProjektPage() {
 
     return (
         <>
-            <a href="#main" className="skip-link">Skip to content</a>
+            <a href="#main" className="skip-link">Hoppa till innehållet</a>
             <Navbar variant="page" current="/projekt/" />
             <main id="main" tabIndex={-1}>
                 <section className="section">

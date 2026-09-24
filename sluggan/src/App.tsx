@@ -15,7 +15,7 @@ function App() {
 
     return (
         <>
-            <a href="#main" className="skip-link">Skip to content</a>
+            <a href="#main" className="skip-link">Hoppa till innehållet</a>
             <Navbar />
             <main id="main" tabIndex={-1}>
                 <Hero />

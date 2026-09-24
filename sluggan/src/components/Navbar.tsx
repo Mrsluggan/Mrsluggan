@@ -79,7 +79,7 @@ const Navbar = ({ variant = "home", current }: Props) => {
         <nav
             ref={navRef}
             className={`navbar${scrolled ? " scrolled" : ""}${open ? " menu-open" : ""}`}
-            aria-label="Main"
+            aria-label="Huvudmeny"
         >
             <a
                 href={onHome ? "#top" : "/"}
@@ -97,7 +97,7 @@ const Navbar = ({ variant = "home", current }: Props) => {
                 ref={toggleRef}
                 type="button"
                 className="nav-toggle"
-                aria-label={open ? "Close menu" : "Open menu"}
+                aria-label={open ? "Stäng meny" : "Öppna meny"}
                 aria-expanded={open}
                 aria-controls="nav-menu"
                 onClick={() => setOpen((o) => !o)}
