@@ -17,12 +17,13 @@ function Services() {
     return (
         <section id="services" className="section">
             <div className="reveal">
-                <p className="eyebrow">Tjänster</p>
-                <h2 className="section-title">Vad jag gör</h2>
+                <p className="eyebrow">Åt småföretag</p>
+                <h2 className="section-title">Behöver du hellre en färdig lösning?</h2>
                 <p className="section-lead">
-                    Mest de här tre sakerna. Passar det du behöver inte riktigt in i
-                    någon av dem, hör av dig ändå — det finns goda chanser att jag kan
-                    hjälpa till, eller åtminstone peka dig i rätt riktning.
+                    Utöver konsultuppdrag bygger jag också hemsidor, webbappar och
+                    mobilappar direkt åt småföretag och privatpersoner. Mest de här tre
+                    sakerna — passar det du behöver inte riktigt in i någon av dem, hör
+                    av dig ändå.
                 </p>
             </div>
 

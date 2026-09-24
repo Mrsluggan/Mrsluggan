@@ -2,7 +2,10 @@
 // Everything reachable from here has to render without a DOM.
 import { renderToString } from "react-dom/server";
 import App from "./App.tsx";
+import ProjektPage from "./ProjektPage.tsx";
 
-export function render(): string {
-    return renderToString(<App />);
+export type Page = "main" | "projekt";
+
+export function render(page: Page): string {
+    return renderToString(page === "projekt" ? <ProjektPage /> : <App />);
 }

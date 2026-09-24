@@ -2,7 +2,7 @@ const highlights = [
     "Du pratar alltid direkt med mig, inte en projektledare eller säljare.",
     "Jag kommer överens om ett pris innan jag börjar, så inget ändras på dig i efterhand.",
     "Små och enstaka jobb är välkomna, inte bara löpande uppdrag.",
-    "Det här är mitt riktiga yrke, inte ett sidoprojekt jag lär mig på.",
+    "Erfarenhet från riktiga produktionssystem — inte något jag lär mig på din bekostnad.",
 ];
 
 function About() {
@@ -19,18 +19,18 @@ function About() {
 
             <div className="about-grid reveal">
                 <p className="about-bio">
-                    Jag har jobbat som professionell utvecklare i flera år, mest
+                    Jag jobbar idag som anställd mjukvaruutvecklare, mest med
                     backend-system i C#/.NET och Java, och fullstack-webbutveckling med
                     React och TypeScript. I vardagen har det handlat om saker som
                     positioneringssystem inomhus och API-integrationer för
-                    säkerhetsbranschen, men jag har byggt en hel del mindre saker vid
-                    sidan om också.
+                    säkerhetsbranschen.
                     <br /><br />
-                    Jag startade Sluggan AB för att många småföretag antingen klarar sig
-                    utan en ordentlig webbplats eller app, eller betalar byråpriser för
-                    något som är mycket enklare än vad de faktiskt behöver. Jag bygger
-                    hellre det du behöver, pratar direkt med dig medan jag gör det, och
-                    tar ett rättvist, fast pris för det.
+                    Vid sidan av jobbet driver jag Sluggan AB. Dels tar jag
+                    konsultuppdrag som systemutvecklare, dels bygger jag hemsidor och
+                    appar åt småföretag som annars antingen klarar sig utan en ordentlig
+                    webbplats, eller betalar byråpriser för något mycket enklare än vad
+                    de faktiskt behöver. Jag bygger hellre det du behöver, pratar direkt
+                    med dig medan jag gör det, och tar ett rättvist pris för det.
                 </p>
 
                 <ul className="about-highlights">

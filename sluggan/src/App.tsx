@@ -1,6 +1,7 @@
 import './assets/App.css';
 import Navbar from "./components/Navbar.tsx";
 import Hero from "./components/Hero.tsx";
+import Consult from "./components/Consult.tsx";
 import Services from "./components/Services.tsx";
 import Process from "./components/Process.tsx";
 import About from "./components/About.tsx";
@@ -18,6 +19,7 @@ function App() {
             <Navbar />
             <main id="main" tabIndex={-1}>
                 <Hero />
+                <Consult />
                 <Services />
                 <Process />
                 <About />
