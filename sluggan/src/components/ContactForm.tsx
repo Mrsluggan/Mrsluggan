@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { LINKEDIN_URL } from "../links.ts";
 
 const EMAIL = "eric.osterberg@sluggan.com";
 const PHONE_DISPLAY = "070-221 40 75";
@@ -66,6 +67,10 @@ function ContactForm() {
                     <a className="contact-link" href={`tel:${PHONE_HREF}`}>
                         <span className="cl">Telefon</span>
                         {PHONE_DISPLAY}
+                    </a>
+                    <a className="contact-link" href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
+                        <span className="cl">LinkedIn</span>
+                        in/eric-osterberg
                     </a>
                     <div className="contact-link contact-link-static">
                         <span className="cl">Adress</span>
