@@ -28,39 +28,58 @@ function PrivacyPage() {
                             <h2>Vilka uppgifter samlas in</h2>
                             <p>
                                 Namn, e-postadress och meddelandet du skriver i
-                                kontaktformuläret. Inget annat samlas in automatiskt — den
-                                här sajten använder varken analytics, spårningscookies
-                                eller annonspixlar.
+                                kontaktformuläret. När du skickar formuläret registreras
+                                också teknisk information som din IP-adress, tidpunkt och
+                                vilken sida du kom från. Utöver det använder den här
+                                sajten varken analytics, spårningscookies eller
+                                annonspixlar.
                             </p>
                         </div>
 
                         <div className="legal-block">
-                            <h2>Varför</h2>
+                            <h2>Varför, och med vilken rätt</h2>
                             <p>
                                 För att kunna svara på din förfrågan och ge dig en
                                 offert. Uppgifterna används inte till något annat.
+                            </p>
+                            <p>
+                                Den rättsliga grunden är att du själv ber om kontakt
+                                inför ett möjligt uppdrag (artikel 6.1 b i GDPR, åtgärder
+                                före ett avtal på din begäran).
                             </p>
                         </div>
 
                         <div className="legal-block">
                             <h2>Hur uppgifterna skickas</h2>
                             <p>
-                                Formuläret skickar informationen via{" "}
-                                <a href="https://web3forms.com" target="_blank" rel="noopener noreferrer">Web3Forms</a>,
-                                en tredjepartstjänst som vidarebefordrar meddelandet
-                                direkt till min mejl. Web3Forms sparar inte meddelandet
-                                permanent hos sig — det fungerar som en ren
-                                vidarebefordran. Eftersom Web3Forms är baserat i USA
-                                innebär det en dataöverföring utanför EU/EES.
+                                Formuläret skickas via{" "}
+                                <a href="https://web3forms.com" target="_blank" rel="noopener noreferrer">Web3Forms</a>{" "}
+                                (drivs av Web3Creative), som tar emot inskicket och
+                                vidarebefordrar det till min mejl. Web3Forms är mitt
+                                personuppgiftsbiträde och behandlar uppgifterna enligt
+                                ett personuppgiftsbiträdesavtal.
+                            </p>
+                            <p>
+                                Web3Creative drivs från Indien och använder
+                                underleverantörer i bland annat USA (Amazon Web Services,
+                                Cloudflare) och EU (Hetzner). Din IP-adress och
+                                e-postadress kontrolleras även av spamfilter (CleanTalk
+                                och Akismet) i USA. Uppgifterna kan alltså föras över
+                                till länder utanför EU/EES. Överföringen skyddas av
+                                EU-kommissionens standardavtalsklausuler.
                             </p>
                         </div>
 
                         <div className="legal-block">
                             <h2>Hur länge uppgifterna sparas</h2>
                             <p>
-                                Så länge det behövs för att hantera din förfrågan och ett
-                                eventuellt kommande uppdrag. Blir det inget uppdrag av
-                                raderas mejlkonversationen inom rimlig tid.
+                                I min mejl sparas konversationen så länge det behövs för
+                                att hantera din förfrågan och ett eventuellt uppdrag. Blir
+                                det inget uppdrag av raderar jag den inom rimlig tid.
+                            </p>
+                            <p>
+                                Web3Forms sparar inskicket hos sig i upp till tre år
+                                enligt sina egna villkor, oberoende av min mejl.
                             </p>
                         </div>
 
