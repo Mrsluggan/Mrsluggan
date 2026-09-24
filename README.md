@@ -1,25 +1,26 @@
-# Sluggan
+# Eric Österberg
 
-Source for [sluggan.com](https://sluggan.com) — the site for Sluggan, a
-one-person consultancy (sole proprietorship, not yet registered) in Uppsala,
-Sweden, run by Eric Österberg: systems development consulting plus websites,
-web apps and mobile apps for small businesses and individuals.
+Systemutvecklare i Uppsala. Backend i C#/.NET och Java, fullstack med React och
+TypeScript, positioneringssystem och API-integrationer.
 
-The site lives in [`sluggan/`](sluggan), a Vite + React + TypeScript app,
-statically prerendered and deployed to GitHub Pages on every push to `main`
-(see [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)).
+Vid sidan av min anställning driver jag [Sluggan](https://sluggan.com): konsultuppdrag
+inom systemutveckling, plus hemsidor och appar åt småföretag.
 
-## Development
+- Webb: [sluggan.com](https://sluggan.com)
+- LinkedIn: [in/eric-osterberg](https://www.linkedin.com/in/eric-osterberg)
+- Mejl: [eric.osterberg@sluggan.com](mailto:eric.osterberg@sluggan.com)
+
+---
+
+### Om det här repot
+
+Källkoden till sluggan.com ligger i [`sluggan/`](sluggan): Vite, React och
+TypeScript, förrenderad till statisk HTML och publicerad på GitHub Pages vid varje
+push till `main` ([`deploy.yml`](.github/workflows/deploy.yml)).
 
 ```bash
 cd sluggan
 npm install
-npm run dev
-```
-
-## Build
-
-```bash
-npm run build      # type-check, build, and prerender to dist/
-npm run preview    # serve the production build locally
+npm run dev      # utvecklingsserver
+npm run build    # typkontroll, bygge och förrendering till dist/
 ```

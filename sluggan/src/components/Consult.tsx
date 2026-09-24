@@ -1,3 +1,5 @@
+import { LINKEDIN_URL } from "../links.ts";
+
 const capabilities = [
     "C#/.NET och Java på backend, React och TypeScript i frontend.",
     "API-integrationer, databaser och arbete i befintliga kodbaser.",
@@ -25,13 +27,18 @@ function Consult() {
                         berättar gärna mer om vad jag jobbat med och hur ett uppdrag
                         skulle kunna se ut.
                     </p>
-                    <a
-                        className="btn btn-primary"
-                        href="#contact"
-                        onClick={(e) => { e.preventDefault(); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}
-                    >
-                        Kontakta mig om ett uppdrag
-                    </a>
+                    <div className="hero-actions">
+                        <a
+                            className="btn btn-primary"
+                            href="#contact"
+                            onClick={(e) => { e.preventDefault(); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}
+                        >
+                            Kontakta mig om ett uppdrag
+                        </a>
+                        <a className="link-arrow" href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
+                            Min bakgrund på LinkedIn <span>↗</span>
+                        </a>
+                    </div>
                 </div>
 
                 <ul className="about-highlights">
