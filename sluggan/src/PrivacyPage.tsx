@@ -10,7 +10,7 @@ function PrivacyPage() {
 
     return (
         <>
-            <a href="#main" className="skip-link">Skip to content</a>
+            <a href="#main" className="skip-link">Hoppa till innehållet</a>
             <Navbar variant="page" current="/integritetspolicy/" />
             <main id="main" tabIndex={-1}>
                 <section className="section">

@@ -84,12 +84,12 @@ function ContactForm() {
                         <div className="field">
                             <label htmlFor="name">Ditt namn</label>
                             <input id="name" name="name" value={form.name} onChange={update}
-                                   placeholder="Anna Andersson" required />
+                                   placeholder="Anna Andersson" autoComplete="name" required />
                         </div>
                         <div className="field">
                             <label htmlFor="email">Din e-post</label>
                             <input id="email" name="email" type="email" value={form.email} onChange={update}
-                                   placeholder="anna@example.com" />
+                                   placeholder="anna@example.com" autoComplete="email" required />
                         </div>
                         <div className="field">
                             <label htmlFor="message">Meddelande</label>
