@@ -1,4 +1,4 @@
-import { GITHUB_URL, LINKEDIN_URL } from "../links.ts";
+import { LINKEDIN_URL } from "../links.ts";
 
 const Footer = () => {
     const year = new Date().getFullYear();
@@ -11,8 +11,6 @@ const Footer = () => {
                 <a href="tel:+46702214075">070-221 40 75</a>
                 {"  ·  "}
                 <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                {"  ·  "}
-                <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">GitHub</a>
                 {"  ·  "}
                 <a href="/integritetspolicy/">integritetspolicy</a>
             </span>
