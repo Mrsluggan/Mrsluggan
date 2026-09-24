@@ -4,7 +4,7 @@ const EMAIL = "eric.osterberg@sluggan.com";
 const PHONE_DISPLAY = "070-221 40 75";
 const PHONE_HREF = "+46702214075";
 const ADDRESS = ["Artillerigatan 6B", "Uppsala, Sverige"];
-const WEB3FORMS_ACCESS_KEY = "e161f953-404a-4799-bc50-5be00c6a2aa6";
+const WEB3FORMS_ACCESS_KEY = "85ab4e2a-7535-4b22-abdd-c9ffe85baab0";
 
 type Status = "idle" | "sending" | "success" | "error";
 
