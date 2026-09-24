@@ -86,6 +86,10 @@ const Navbar = ({ variant = "home", current }: Props) => {
                 className="brand"
                 onClick={onHome ? (e) => scrollTo(e, "#top") : undefined}
             >
+                <svg className="brand-icon" width="24" height="24" viewBox="0 0 100 100" aria-hidden="true">
+                    <path d="M78 55 A28 28 0 1 1 50 22" fill="none" stroke="currentColor" strokeWidth="9" strokeLinecap="round" />
+                    <path d="M50 22 A16 16 0 1 1 34 38" fill="none" stroke="currentColor" strokeWidth="9" strokeLinecap="round" />
+                </svg>
                 Sluggan <span className="brand-mark">AB</span>
             </a>
 

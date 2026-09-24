@@ -22,6 +22,9 @@
 .navbar.scrolled { border-bottom-color: var(--border-strong); }
 
 .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
     font-family: var(--font-display);
     font-weight: 500;
     font-size: 1.3rem;
@@ -29,6 +32,7 @@
     color: var(--text);
     text-decoration: none;
 }
+.brand-icon { flex-shrink: 0; color: var(--accent); }
 .brand-mark { color: var(--accent); font-style: italic; }
 
 .nav-links {
