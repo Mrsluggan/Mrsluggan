@@ -33,7 +33,6 @@
     text-decoration: none;
 }
 .brand-icon { flex-shrink: 0; color: var(--accent); }
-.brand-mark { color: var(--accent); font-style: italic; }
 
 .nav-links {
     display: flex;
@@ -323,6 +322,26 @@
 @media (max-width: 600px) {
     .case-fields { grid-template-columns: 1fr; }
 }
+
+/* ---------------- Legal (privacy policy) ---------------- */
+.legal {
+    display: flex;
+    flex-direction: column;
+    max-width: 62rem;
+    border-top: 1.5px solid var(--border-strong);
+}
+.legal-block { padding: 2.2rem 0; border-bottom: 1px solid var(--border); }
+.legal-block:last-child { border-bottom: none; }
+.legal-block h2 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+}
+.legal-block p { color: var(--text-muted); margin: 0; max-width: 62ch; }
+.legal-block p + p { margin-top: 0.8rem; }
+.legal-block a { color: var(--accent); text-decoration: underline; }
+.legal-updated { font-size: 0.85rem; color: var(--text-faint); }
 
 /* ---------------- FAQ ---------------- */
 .faq-list { border-top: 1.5px solid var(--border-strong); max-width: 46rem; }

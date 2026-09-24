@@ -1,8 +1,9 @@
-# Sluggan AB
+# Sluggan
 
-Source for [sluggan.com](https://sluggan.com) — the company website for Sluggan AB,
-a one-person consultancy in Uppsala, Sweden building websites, web apps and mobile
-apps for small businesses and individuals.
+Source for [sluggan.com](https://sluggan.com) — the site for Sluggan, a
+one-person consultancy (sole proprietorship, not yet registered) in Uppsala,
+Sweden, run by Eric Österberg: systems development consulting plus websites,
+web apps and mobile apps for small businesses and individuals.
 
 The site lives in [`sluggan/`](sluggan), a Vite + React + TypeScript app,
 statically prerendered and deployed to GitHub Pages on every push to `main`

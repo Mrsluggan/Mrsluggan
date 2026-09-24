@@ -16,6 +16,7 @@ const SSR_DIR = join(root, ".ssr-tmp");
 const PAGES = [
     { page: "main", html: "dist/index.html" },
     { page: "projekt", html: "dist/projekt/index.html" },
+    { page: "privacy", html: "dist/integritetspolicy/index.html" },
 ];
 
 const ROOT_DIV = '<div id="root"></div>';

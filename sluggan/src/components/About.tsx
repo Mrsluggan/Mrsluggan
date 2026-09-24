@@ -12,7 +12,7 @@ function About() {
                 <p className="eyebrow">Om mig</p>
                 <h2 className="section-title">Vem du skulle jobba med</h2>
                 <p className="section-lead">
-                    Sluggan AB är jag — Eric Österberg, mjukvaruutvecklare baserad i
+                    Sluggan är jag — Eric Österberg, mjukvaruutvecklare baserad i
                     Uppsala.
                 </p>
             </div>
@@ -25,7 +25,7 @@ function About() {
                     positioneringssystem inomhus och API-integrationer för
                     säkerhetsbranschen.
                     <br /><br />
-                    Vid sidan av jobbet driver jag Sluggan AB. Dels tar jag
+                    Vid sidan av jobbet driver jag Sluggan. Dels tar jag
                     konsultuppdrag som systemutvecklare, dels bygger jag hemsidor och
                     appar åt småföretag som annars antingen klarar sig utan en ordentlig
                     webbplats, eller betalar byråpriser för något mycket enklare än vad
