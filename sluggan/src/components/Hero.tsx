@@ -2,7 +2,7 @@ function Hero() {
     return (
         <section id="top" className="hero">
             <div className="hero-main reveal">
-                <p className="hero-kicker">Sluggan AB · Uppsala, Sverige</p>
+                <p className="hero-kicker">Sluggan · Uppsala, Sverige</p>
 
                 <h1>
                     Jag bygger system,
@@ -10,7 +10,7 @@ function Hero() {
                 </h1>
 
                 <p className="hero-intro">
-                    Jag heter Eric och driver Sluggan AB i Uppsala. Jag jobbar med
+                    Jag heter Eric och driver Sluggan i Uppsala. Jag jobbar med
                     systemutveckling — backend i C#/.NET och Java, fullstack med React
                     och TypeScript — och tar både konsultuppdrag hos företag och egna
                     projekt åt småföretag som behöver en hemsida eller app.

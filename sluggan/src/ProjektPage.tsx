@@ -7,7 +7,7 @@ const cases = [
     {
         title: "sluggan.com",
         problem:
-            "Den gamla sajten var en personlig portfolio, inte en företagssajt — behövde byggas om från grunden för att representera Sluggan AB.",
+            "Den gamla sajten var en personlig portfolio, inte en verksamhetssajt — behövde byggas om från grunden för att representera Sluggan.",
         role:
             "Design, copy, arkitektur och implementation — helt självständigt, från första wireframe till deploy.",
         tech: "React, TypeScript, Vite, statisk SSG-rendering, GitHub Pages, Web3Forms.",
