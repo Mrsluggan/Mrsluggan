@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const EMAIL = "ericflyger@gmail.com";
+const EMAIL = "eric.osterberg@sluggan.com";
 const PHONE_DISPLAY = "070-221 40 75";
 const PHONE_HREF = "+46702214075";
 const ADDRESS = ["Artillerigatan 6B", "Uppsala, Sverige"];

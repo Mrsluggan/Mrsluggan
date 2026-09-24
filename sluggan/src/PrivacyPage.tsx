@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar.tsx";
 import Footer from "./components/Footer.tsx";
 import { useReveal } from "./hooks/useReveal.ts";
 
-const EMAIL = "ericflyger@gmail.com";
+const EMAIL = "eric.osterberg@sluggan.com";
 
 function PrivacyPage() {
     useReveal();
