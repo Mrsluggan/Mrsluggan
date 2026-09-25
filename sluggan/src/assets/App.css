@@ -269,15 +269,28 @@
     align-items: start;
 }
 .about-bio { color: var(--text-muted); font-size: 1.12rem; margin: 0; }
-.about-aside { display: flex; flex-direction: column; gap: 2rem; }
+/* portrait anchors the left edge from the top; all copy reads in one column */
+.about-layout {
+    display: grid;
+    grid-template-columns: 0.75fr 1.25fr;
+    gap: clamp(2rem, 6vw, 4.5rem);
+    align-items: start;
+}
 .about-portrait {
     display: block;
     width: 100%;
-    max-width: 360px;
     height: auto;
     aspect-ratio: 4 / 5;
     object-fit: cover;
     border: 1.5px solid var(--border-strong);
+    position: sticky;
+    top: 100px;
+}
+.about-text .about-highlights { margin-top: 2.4rem; }
+
+@media (max-width: 780px) {
+    .about-layout { grid-template-columns: 1fr; }
+    .about-portrait { position: static; max-width: 280px; }
 }
 .about-highlights {
     list-style: none;

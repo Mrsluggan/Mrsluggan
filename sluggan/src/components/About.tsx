@@ -8,48 +8,52 @@ const highlights = [
 function About() {
     return (
         <section id="about" className="section">
-            <div className="reveal">
-                <p className="eyebrow">Om mig</p>
-                <h2 className="section-title">Vem du skulle jobba med</h2>
-                <p className="section-lead">
-                    Sluggan är jag — Eric Österberg, mjukvaruutvecklare baserad i
-                    Uppsala.
-                </p>
-            </div>
+            <div className="about-layout">
+                <img
+                    className="about-portrait reveal"
+                    src="/img/eric-960.webp"
+                    srcSet="/img/eric-480.webp 480w, /img/eric-960.webp 960w"
+                    sizes="(max-width: 780px) 280px, 420px"
+                    width={960}
+                    height={1200}
+                    alt="Eric Österberg"
+                    loading="lazy"
+                    decoding="async"
+                />
 
-            <div className="about-grid reveal">
-                <p className="about-bio">
-                    Jag jobbar idag som anställd mjukvaruutvecklare, mest med
-                    backend-system i C#/.NET och Java, och fullstack-webbutveckling med
-                    React och TypeScript. I vardagen har det handlat om saker som
-                    positioneringssystem inomhus och API-integrationer för
-                    säkerhetsbranschen.
-                    <br /><br />
-                    Vid sidan av jobbet driver jag Sluggan. Dels tar jag
-                    konsultuppdrag som systemutvecklare, dels bygger jag hemsidor och
-                    appar åt småföretag som annars antingen klarar sig utan en ordentlig
-                    webbplats, eller betalar byråpriser för något mycket enklare än vad
-                    de faktiskt behöver. Jag bygger hellre det du behöver, pratar direkt
-                    med dig medan jag gör det, och tar ett rättvist pris för det.
-                </p>
+                <div className="about-text">
+                    <div className="reveal">
+                        <p className="eyebrow">Om mig</p>
+                        <h2 className="section-title">Vem du skulle jobba med</h2>
+                        <p className="section-lead">
+                            Sluggan är jag — Eric Österberg, mjukvaruutvecklare baserad i
+                            Uppsala.
+                        </p>
+                    </div>
 
-                <div className="about-aside">
-                    <img
-                        className="about-portrait"
-                        src="/img/eric-960.webp"
-                        srcSet="/img/eric-480.webp 480w, /img/eric-960.webp 960w"
-                        sizes="(max-width: 780px) 90vw, 360px"
-                        width={960}
-                        height={1200}
-                        alt="Eric Österberg"
-                        loading="lazy"
-                        decoding="async"
-                    />
-                    <ul className="about-highlights">
-                        {highlights.map((h) => (
-                            <li key={h}>{h}</li>
-                        ))}
-                    </ul>
+                    <div className="reveal">
+                        <p className="about-bio">
+                            Jag jobbar idag som anställd mjukvaruutvecklare, mest med
+                            backend-system i C#/.NET och Java, och fullstack-webbutveckling
+                            med React och TypeScript. I vardagen har det handlat om saker som
+                            positioneringssystem inomhus och API-integrationer för
+                            säkerhetsbranschen.
+                            <br /><br />
+                            Vid sidan av jobbet driver jag Sluggan. Dels tar jag
+                            konsultuppdrag som systemutvecklare, dels bygger jag hemsidor och
+                            appar åt småföretag som annars antingen klarar sig utan en
+                            ordentlig webbplats, eller betalar byråpriser för något mycket
+                            enklare än vad de faktiskt behöver. Jag bygger hellre det du
+                            behöver, pratar direkt med dig medan jag gör det, och tar ett
+                            rättvist pris för det.
+                        </p>
+
+                        <ul className="about-highlights">
+                            {highlights.map((h) => (
+                                <li key={h}>{h}</li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
