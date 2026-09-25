@@ -33,11 +33,24 @@ function About() {
                     med dig medan jag gör det, och tar ett rättvist pris för det.
                 </p>
 
-                <ul className="about-highlights">
-                    {highlights.map((h) => (
-                        <li key={h}>{h}</li>
-                    ))}
-                </ul>
+                <div className="about-aside">
+                    <img
+                        className="about-portrait"
+                        src="/img/eric-960.webp"
+                        srcSet="/img/eric-480.webp 480w, /img/eric-960.webp 960w"
+                        sizes="(max-width: 780px) 90vw, 360px"
+                        width={960}
+                        height={1200}
+                        alt="Eric Österberg"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                    <ul className="about-highlights">
+                        {highlights.map((h) => (
+                            <li key={h}>{h}</li>
+                        ))}
+                    </ul>
+                </div>
             </div>
         </section>
     );
