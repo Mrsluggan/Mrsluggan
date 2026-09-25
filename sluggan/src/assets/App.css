@@ -269,6 +269,16 @@
     align-items: start;
 }
 .about-bio { color: var(--text-muted); font-size: 1.12rem; margin: 0; }
+.about-aside { display: flex; flex-direction: column; gap: 2rem; }
+.about-portrait {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border: 1.5px solid var(--border-strong);
+}
 .about-highlights {
     list-style: none;
     margin: 0; padding: 1.8rem 0 0;
