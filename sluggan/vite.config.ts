@@ -1,8 +1,9 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// Three entries, three real HTML files: "/", "/projekt/" and
-// "/integritetspolicy/". Keeps GitHub Pages happy without a router.
+// One real HTML file per page: "/", "/projekt/", "/integritetspolicy/",
+// plus a template that prerender copies to /projekt/<slug>/ per project.
+// Keeps GitHub Pages happy without a router.
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
@@ -12,6 +13,7 @@ export default defineConfig({
         main: 'index.html',
         projekt: 'projekt/index.html',
         privacy: 'integritetspolicy/index.html',
+        case: 'projekt/_mall/index.html',
       },
     },
   },
