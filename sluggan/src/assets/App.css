@@ -395,15 +395,14 @@
 .case-list {
     display: flex;
     flex-direction: column;
-    gap: 1.5px;
-    background: var(--border-strong);
-    border: 1.5px solid var(--border-strong);
+    gap: clamp(1.8rem, 4vw, 2.8rem);
 }
 .case-card {
     position: relative;
     display: grid;
     grid-template-columns: 1.1fr 1fr;
     background: var(--bg);
+    border: 1.5px solid var(--border-strong);
 }
 .case-card.no-cover { grid-template-columns: 1fr; }
 .case-card-img {
