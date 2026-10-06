@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar.tsx";
 import Hero from "./components/Hero.tsx";
 import Consult from "./components/Consult.tsx";
 import Services from "./components/Services.tsx";
+import Packages from "./components/Packages.tsx";
 import Process from "./components/Process.tsx";
 import About from "./components/About.tsx";
 import FAQ from "./components/FAQ.tsx";
@@ -21,6 +22,7 @@ function App() {
                 <Hero />
                 <Consult />
                 <Services />
+                <Packages />
                 <Process />
                 <About />
                 <FAQ />

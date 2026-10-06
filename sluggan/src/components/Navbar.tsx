@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 const sections = [
     { label: "Konsult", href: "#consult" },
     { label: "Tjänster", href: "#services" },
+    { label: "Priser", href: "#paket" },
     { label: "Om mig", href: "#about" },
     { label: "Kontakt", href: "#contact" },
 ];

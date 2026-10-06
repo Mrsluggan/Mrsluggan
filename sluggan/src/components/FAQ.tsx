@@ -1,7 +1,7 @@
 const faqs = [
     {
         q: "Vad kostar det?",
-        a: "Beror helt på omfattningen. En enkel hemsida kostar betydligt mindre än en skräddarsydd app med inloggning och backend. Hör av dig så får du en kostnadsfri offert med ett fast pris, innan något börjar byggas.",
+        a: "Hemsidor finns som paket från 299 kr i månaden, med drift och ändringar inräknade. Allt annat beror på omfattningen. En enkel hemsida kostar betydligt mindre än en skräddarsydd app med inloggning och backend. Hör av dig så får du en kostnadsfri offert med ett fast pris, innan något börjar byggas.",
     },
     {
         q: "Hur lång tid tar det?",
@@ -21,7 +21,7 @@ const faqs = [
     },
     {
         q: "Måste jag skriva på ett långt avtal?",
-        a: "Nej. Arbetet avgränsas och prissätts per projekt, inte som ett löpande uppdrag. Behöver du bara en sak byggd är det hela engagemanget.",
+        a: "Nej. Engångsjobb avgränsas och prissätts per projekt. Behöver du bara en sak byggd är det hela engagemanget. Väljer du ett paket betalar du per månad, med 12 månaders bindningstid eftersom bygget ingår i avgiften. Sedan kan du säga upp med en månads varsel.",
     },
     {
         q: "Tänk om det bara är ett litet jobb, som en sida?",

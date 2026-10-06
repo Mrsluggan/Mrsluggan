@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { LINKEDIN_URL } from "../links.ts";
 
 const EMAIL = "eric.osterberg@sluggan.com";
@@ -12,6 +12,18 @@ type Status = "idle" | "sending" | "success" | "error";
 function ContactForm() {
     const [form, setForm] = useState({ name: "", email: "", message: "" });
     const [status, setStatus] = useState<Status>("idle");
+
+    // "Välj Företag →" in the packages section prefills the message.
+    useEffect(() => {
+        const onChoose = (e: Event) => {
+            const name = (e as CustomEvent<string>).detail;
+            setForm((prev) => prev.message.trim()
+                ? prev
+                : { ...prev, message: `Hej! Jag är intresserad av paketet ${name}. ` });
+        };
+        window.addEventListener("sluggan:paket", onChoose);
+        return () => window.removeEventListener("sluggan:paket", onChoose);
+    }, []);
 
     const update = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
         setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
