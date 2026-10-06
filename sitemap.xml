@@ -11,11 +11,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://sluggan.com/projekt/sluggan/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://sluggan.com/projekt/noq/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
